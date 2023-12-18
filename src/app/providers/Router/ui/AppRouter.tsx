@@ -12,7 +12,11 @@ const AppRouter = () => {
                         <Route
                             path={path}
                             key={path}
-                            element={element}
+                            element={
+                            <div className='page'>
+                                {element}
+                            </div>
+                            }
                         />
                     ))
                 }
