@@ -4,10 +4,15 @@ export interface BuildPaths {
     entry: string
     output: string
     html: string
+    src: string
 }
 
-export interface BuildOption {
+export interface BuildEnv {
     mode: BuildMode,
+    port: number
+}
+
+export interface BuildOption extends BuildEnv{
     paths: BuildPaths,
-    isDev: boolean
+    isDev: boolean,
 }
