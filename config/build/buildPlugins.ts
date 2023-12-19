@@ -9,7 +9,10 @@ export function buildPlugins({paths, isDev }: BuildOption): webpack.WebpackPlugi
         new HtmlWebpackPlugin({
             template: paths.html
         }),
-        new webpack.ProgressPlugin()
+        new webpack.ProgressPlugin(),
+        new webpack.DefinePlugin({
+            __IS_DEV__: JSON.stringify(isDev)
+        })
     ]
 
     if (isDev) {

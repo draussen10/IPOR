@@ -5,6 +5,7 @@ import {classNames} from "shared/lib/classNames";
 
 export enum ThemeButton {
     CLEAR = 'clear',
+    SIMPLE = 'simple'
 }
 
 export interface ButtonProps extends ComponentProps,
