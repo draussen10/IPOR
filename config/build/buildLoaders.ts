@@ -1,6 +1,6 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOption} from "./types/config";
+import webpack from 'webpack'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import {BuildOption} from './types/config'
 
 export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
 
@@ -14,7 +14,7 @@ export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env']
             }
@@ -38,7 +38,7 @@ export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
             // Translates CSS into CommonJS
             cssLoader,
             // Compiles Sass to CSS
-            "sass-loader",
+            'sass-loader',
         ],
     }
 

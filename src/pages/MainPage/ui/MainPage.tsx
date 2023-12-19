@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './MainPage.module.scss'
 
 const MainPage = () => {
@@ -6,7 +6,7 @@ const MainPage = () => {
         <div>
             Main
         </div>
-    );
-};
+    )
+}
 
-export default MainPage;
+export default MainPage

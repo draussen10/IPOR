@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 import classes from './Navbar.module.scss'
-import {RoutePath} from "shared/config/routeConfig/routeConfig";
-import {classNames} from "shared/lib/classNames";
-import {ComponentProps} from "shared/types/ComponentProps";
-import AppLink from "shared/ui/AppLink/AppLink";
+import {RoutePath} from 'shared/config/routeConfig/routeConfig'
+import {classNames} from 'shared/lib/classNames'
+import {ComponentProps} from 'shared/types/ComponentProps'
+import AppLink from 'shared/ui/AppLink/AppLink'
 
 interface NavbarProps extends ComponentProps {
 }
@@ -21,7 +21,7 @@ const Navbar = ({className}: NavbarProps) => {
                 <AppLink to={RoutePath.about}>About</AppLink>
             </div>
         </div>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar

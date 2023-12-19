@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styles from './AboutPage.module.scss'
 
 const AboutPage = () => {
@@ -6,7 +6,7 @@ const AboutPage = () => {
         <div>
             About
         </div>
-    );
-};
+    )
+}
 
-export default AboutPage;
+export default AboutPage

@@ -1,13 +1,13 @@
-import React,{ FC } from 'react';
+import React,{ FC } from 'react'
 import cls from './LanguageSwitcher.module.scss'
-import {ComponentProps} from "shared/types/ComponentProps";
-import {Button, ThemeButton} from "shared/ui/Button";
-import {useTranslation} from "react-i18next";
+import {ComponentProps} from 'shared/types/ComponentProps'
+import {Button, ThemeButton} from 'shared/ui/Button'
+import {useTranslation} from 'react-i18next'
 
 export interface LanguageSwitcherProps extends ComponentProps {}
 
 const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
-    const {t, i18n} = useTranslation();
+    const {t, i18n} = useTranslation()
 
     const toggleLanguage = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
@@ -21,7 +21,7 @@ const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
         >
             {t('Language')}
         </Button>
-    );
-};
+    )
+}
 
-export default LanguageSwitcher;
+export default LanguageSwitcher
