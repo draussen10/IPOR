@@ -9,7 +9,8 @@ export interface BuildPaths {
 
 export interface BuildEnv {
     mode: BuildMode,
-    port: number
+    port: number,
+    analyzer?: boolean
 }
 
 export interface BuildOption extends BuildEnv{
