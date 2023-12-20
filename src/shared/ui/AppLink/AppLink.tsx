@@ -11,7 +11,7 @@ const AppLink: FC<AppLinkProps> = ({className, children, to, ...otherProps}) => 
     return (
         <Link
             className={classNames(
-                cls.AppLink,
+                cls.appLink,
                 {},
                 [className]
             )}
