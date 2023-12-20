@@ -1,0 +1,32 @@
+.sidebar {
+  height: calc(100vh - var(--navbar-height));
+  width: var(--sidebar-width-collapsed);
+  background: var(--inverted-bg-color);
+  position: relative;
+  transition: width 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    width: var(--sidebar-width);
+  }
+}
+
+.switchers {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  & button {
+    margin-top: 10px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
