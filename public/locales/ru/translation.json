@@ -1,3 +1,6 @@
 {
-  "Language": "RU"
+  "Language": "RU",
+  "Page not found": "Страница не найдена",
+  "errorText": "Что-то пошло не так",
+  "refreshPage": "Обновить страницу"
 }

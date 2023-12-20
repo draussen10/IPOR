@@ -19,7 +19,9 @@ export function buildPlugins({paths, isDev }: BuildOption): webpack.WebpackPlugi
     if (isDev) {
         plugins = plugins.concat(
             [
-                new ReactRefreshPlugin()
+                new ReactRefreshPlugin({
+                    overlay: false
+                })
             ]
         )
     }

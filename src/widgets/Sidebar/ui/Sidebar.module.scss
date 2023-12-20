@@ -1,13 +1,17 @@
 .sidebar {
   height: calc(100vh - var(--navbar-height));
-  width: var(--sidebar-width);
+  width: var(--sidebar-width-collapsed);
   background: var(--inverted-bg-color);
   position: relative;
-  transition: width 0.2s ease;
-}
+  transition: width 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+  &:hover {
+    width: var(--sidebar-width);
+  }
 }
 
 .switchers {
