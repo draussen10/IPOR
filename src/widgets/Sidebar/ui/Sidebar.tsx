@@ -10,14 +10,16 @@ export interface SidebarProps extends ComponentProps {
 
 const Sidebar: FC<SidebarProps> = ({className}) => {
     return (
-        <div className={classNames(
-            cls.sidebar,
-            {},
-            [className]
-        )}>
+        <div
+            data-testid="sidebar"
+            className={classNames(
+                cls.sidebar,
+                {},
+                [className]
+            )}>
             <div className={cls.switchers}>
-                <ThemeSwitcher />
-                <LanguageSwitcher />
+                <ThemeSwitcher/>
+                <LanguageSwitcher/>
             </div>
         </div>
     )
