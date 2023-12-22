@@ -1,4 +1,4 @@
-import type {Decorator, Preview} from '@storybook/react'
+import type {Preview} from '@storybook/react'
 import {styleDecorator} from 'shared/config/storybook/Decorators/styleDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 import {themeDecorator} from 'shared/config/storybook/Decorators/themeDecorator'
