@@ -4,7 +4,8 @@ import {ComponentProps} from 'shared/types/ComponentProps'
 import {Theme, useTheme} from 'app/providers/ThemeProvider'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
-import {Button, ThemeButton} from 'shared/ui/Button'
+import {Sidebar, ThemeButton} from 'shared/ui/Button'
+import Button from 'shared/ui/Button/ui/Button'
 
 export interface ThemeSwitcherProps extends ComponentProps {}
 
@@ -19,8 +20,7 @@ const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
             className={cls.themeSwitchers}
             onClick={toggleTheme}
         >
-            {theme === Theme.LIGHT && <LightIcon/>}
-            {theme === Theme.DARK && <DarkIcon/>}
+            {theme === Theme.LIGHT ? <LightIcon/> : <DarkIcon/>}
         </Button>
     )
 }
