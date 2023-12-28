@@ -6,6 +6,8 @@
   align-items: center;
   padding: 20px;
   position: fixed;
+  top: 0;
+  left: 0;
 
   & .links {
     margin-left: auto;
@@ -18,4 +20,8 @@
       }
     }
   }
+}
+
+.notFixed {
+  position: static;
 }
