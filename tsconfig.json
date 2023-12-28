@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "module": "CommonJS",
+    "module": "ESNext",
     "target": "ESNext",
     "sourceMap": true,
     "outDir": "./dist",
@@ -17,5 +17,13 @@
   },
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
+//  "include": [
+//    "config/jest/setupTests.ts"
+//  ]
 }

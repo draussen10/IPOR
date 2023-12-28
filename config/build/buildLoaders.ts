@@ -1,6 +1,6 @@
 import webpack from 'webpack'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {BuildOption} from './types/config'
+import {buildCssLoader} from './loaders/buildCssLoaders'
 
 export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
 
@@ -19,27 +19,6 @@ export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
                 presets: ['@babel/preset-env']
             }
         }
-    }
-
-    const cssLoader = {
-        loader: 'css-loader',
-        options: {
-            modules: {
-                auto: /\.module.s[ac]ss$/i,
-                localIdentName: isDev ? '[path][name]__[local]' : '[hash:base64:8]'
-            }
-        }
-    }
-
-    const styleLoader = {
-        test: /\.s[ac]ss$/i,
-        use: [
-            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-            // Translates CSS into CommonJS
-            cssLoader,
-            // Compiles Sass to CSS
-            'sass-loader',
-        ],
     }
 
     const svgLoader = {
@@ -61,6 +40,6 @@ export function buildLoaders({isDev}: BuildOption): webpack.RuleSetRule[] {
         svgLoader,
         babelLoader,
         typescriptLoader,
-        styleLoader,
+        buildCssLoader(isDev),
     ]
 }
