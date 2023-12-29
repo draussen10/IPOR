@@ -34,5 +34,5 @@ jobs:
         run: npm run test:unit
 
       - name: unit test
-        run: npm run storybook:build && npm run test:ui:static
+        run: npm run storybook:build && test:ui:static:update && npm run test:ui:static
 
