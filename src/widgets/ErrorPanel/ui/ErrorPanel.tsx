@@ -1,6 +1,6 @@
-import React, {Suspense} from 'react'
+import React from 'react'
 import {useTranslation} from 'react-i18next'
-import { Button } from 'shared/ui/Button'
+import {Button} from 'shared/ui/Button'
 import cls from './ErrorPanel.module.scss'
 
 const ErrorPanel = () => {
@@ -11,14 +11,12 @@ const ErrorPanel = () => {
     }
 
     return (
-        <Suspense fallback={<div>Ожидайте ответа!</div>}>
-            <div className={cls.errorPanel}>
-                <p>{t('errorText')}</p>
-                <Button onClick={reloadPage}>
-                    {t('refreshPage')}
-                </Button>
-            </div>
-        </Suspense>
+        <div className={cls.errorPanel}>
+            <p>{t('errorText')}</p>
+            <Button onClick={reloadPage}>
+                {t('refreshPage')}
+            </Button>
+        </div>
     )
 }
 

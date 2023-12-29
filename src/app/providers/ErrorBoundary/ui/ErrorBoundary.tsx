@@ -1,5 +1,5 @@
 import {ComponentProps} from 'shared/types/ComponentProps'
-import React, {ErrorInfo, ReactNode} from 'react'
+import React, {ErrorInfo, ReactNode, Suspense} from 'react'
 import {ErrorPanel} from 'widgets/ErrorPanel'
 
 export interface ErrorBoundaryProps extends ComponentProps {
@@ -30,7 +30,9 @@ class ErrorBoundary extends React.Component<ErrorBoundaryProps, ErrorBoundarySta
             // You can render any custom fallback UI
             return (
                 <div>
-                    <ErrorPanel />
+                    <Suspense fallback={<div>Ожидайте ответа!</div>}>
+                        <ErrorPanel />
+                    </Suspense>
                     {this.props.children}
                 </div>
             )
