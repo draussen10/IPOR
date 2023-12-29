@@ -25,10 +25,10 @@ jobs:
         run: npm run build:prod
 
       - name: linting typescript
-        run: npm run list:ts
+        run: npm run lint:ts
 
       - name: linting scss
-        run: npm run list:scss
+        run: npm run lint:scss
 
       - name: unit test
         run: npm run test:unit
