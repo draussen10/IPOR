@@ -1,16 +1,16 @@
 import type {Meta, StoryObj} from '@storybook/react'
-import {MainPage, ThemeButton} from 'shared/ui/Button'
+import {Button, ThemeButton} from 'shared/ui/Button'
 import {themeDecorator} from 'shared/config/storybook/Decorators/themeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 
-const meta: Meta<typeof MainPage> = {
+const meta: Meta<typeof Button> = {
     title: 'shared/Button',
-    component: MainPage,
+    component: Button,
     tags: ['autodocs'],
 }
 
 export default meta
-type Story = StoryObj<typeof MainPage>;
+type Story = StoryObj<typeof Button>;
 
 export const Clear: Story = {
     args: {

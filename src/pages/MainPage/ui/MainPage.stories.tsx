@@ -3,7 +3,7 @@ import {MainPage} from 'pages/MainPage'
 
 
 const meta: Meta<typeof MainPage> = {
-    title: 'shared/Button',
+    title: 'pages/MainPage',
     component: MainPage,
     tags: ['autodocs'],
 }
