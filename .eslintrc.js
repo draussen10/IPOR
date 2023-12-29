@@ -1,4 +1,4 @@
-module.exports =  {
+module.exports = {
     'env': {
         'browser': true,
         'es2021': true
@@ -30,11 +30,11 @@ module.exports =  {
     ],
     'settings': {
         'react': {
-            'createClass': 'createReactClass', 
-            'pragma': 'React',  
-            'fragment': 'Fragment',  
-            'version': 'detect', 
-            'flowVersion': '0.53' 
+            'createClass': 'createReactClass',
+            'pragma': 'React',
+            'fragment': 'Fragment',
+            'version': 'detect',
+            'flowVersion': '0.53'
         },
         'propWrapperFunctions': [
             'forbidExtraProps',
@@ -46,7 +46,7 @@ module.exports =  {
             'observer',
             {'property': 'styled'},
             {'property': 'observer', 'object': 'Mobx'},
-            {'property': 'observer', 'object': '<pragma>'} 
+            {'property': 'observer', 'object': '<pragma>'}
         ],
         'formComponents': [
             'CustomForm',
@@ -62,10 +62,7 @@ module.exports =  {
             'error',
             4
         ],
-        'linebreak-style': [
-            'error',
-            'windows'
-        ],
+        'linebreak-style': 'off',
         'quotes': [
             'error',
             'single'
@@ -76,6 +73,6 @@ module.exports =  {
         ],
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-unused-vars': 'off',
-        'i18next/no-literal-string': [ 'warn', {'markupOnly': true}],
+        'i18next/no-literal-string': ['warn', {'markupOnly': true}],
     }
 }
