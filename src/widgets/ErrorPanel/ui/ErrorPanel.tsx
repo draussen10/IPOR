@@ -11,7 +11,7 @@ const ErrorPanel = () => {
     }
 
     return (
-        <Suspense fallback="Ожидайте ответа!">
+        <Suspense fallback={<div>Ожидайте ответа!</div>}>
             <div className={cls.errorPanel}>
                 <p>{t('errorText')}</p>
                 <Button onClick={reloadPage}>
