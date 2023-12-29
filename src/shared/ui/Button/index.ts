@@ -1,3 +1,3 @@
-import Sidebar, { ThemeButton } from './ui/Button'
+import MainPage, { ThemeButton } from './ui/Button'
 
-export {Sidebar, ThemeButton}
+export {MainPage, ThemeButton}
