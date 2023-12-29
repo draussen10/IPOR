@@ -32,3 +32,7 @@ jobs:
 
       - name: unit test
         run: npm run test:unit
+
+      - name: unit test
+        run: npm run storybook:build && npm run test:ui:static
+
