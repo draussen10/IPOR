@@ -16,7 +16,7 @@ const App = () => {
                 [theme])
             }
         >
-            <Suspense fallback=''>
+            <Suspense fallback={<></>}>
                 <Navbar/>
                 <div className="content-page">
                     <Sidebar/>
