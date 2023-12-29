@@ -9,9 +9,6 @@ i18n
     .use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        react: {
-            useSuspense: false
-        },
         // lng: 'en',
         fallbackLng: 'ru',
         // debug: __IS_DEV__,
