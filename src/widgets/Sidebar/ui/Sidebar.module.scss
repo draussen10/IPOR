@@ -1,3 +1,29 @@
+.link {
+  margin-left: 10px;
+  color: var(--secondary-color);
+  display: none;
+}
+
+.icon {
+  fill: var(--secondary-color);
+  width: 35px;
+  height: 35px;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-top: 10px;
+}
+
+.item {
+  display: flex;
+  margin-bottom: 25px;
+  text-decoration: none;
+}
+
 .sidebar {
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width-collapsed);
@@ -15,6 +41,19 @@
 
     & + div {
       margin-left: var(--sidebar-width);
+    }
+
+    & .item {
+      margin-bottom: 10px;
+    }
+
+    & .link {
+      display: block;
+    }
+
+    & .icon {
+      width: 20px;
+      height: 20px;
     }
   }
 }

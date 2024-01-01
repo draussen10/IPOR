@@ -6,12 +6,22 @@ import {classNames} from 'shared/lib/classNames'
 export enum ThemeButton {
     CLEAR = 'clear',
     SIMPLE = 'simple',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
+    BACKGROUND = 'background',
+    BACKGROUND_INVERTED = 'backgroundInverted',
+}
+
+export enum SizeButton {
+    S = 'size_s',
+    M = 'size_m',
+    L = 'size_l',
 }
 
 export interface ButtonProps extends ComponentProps,
     ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ThemeButton
+    size?: SizeButton
+    square?: boolean
 }
 
 const Button: FC<ButtonProps> = (props) => {
@@ -19,14 +29,22 @@ const Button: FC<ButtonProps> = (props) => {
         className,
         children,
         theme,
+        size = SizeButton.M,
+        square = false,
         ...otherProp} = props
 
     return (
         <button
             className={classNames(
                 cls.button,
-                {},
-                [className, cls[theme]]
+                {
+                    [cls.square]: square
+                },
+                [
+                    className,
+                    cls[theme],
+                    cls[size]
+                ]
             )}
             {...otherProp}
         >

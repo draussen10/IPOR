@@ -17,8 +17,7 @@ const Navbar = ({className}: NavbarProps) => {
         )}>
 
             <div className={classes.links}>
-                <AppLink to={RoutePath.main}>Main</AppLink>
-                <AppLink to={RoutePath.about}>About</AppLink>
+                <AppLink to={RoutePath.main}>/</AppLink>
             </div>
         </div>
     )

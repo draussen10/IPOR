@@ -41,3 +41,17 @@ export const Outlined_Dark: Story = {
     },
     decorators: [themeDecorator(Theme.DARK)]
 }
+
+export const Background: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND,
+        children: 'Button',
+    },
+}
+
+export const Background_Inverted: Story = {
+    args: {
+        theme: ThemeButton.BACKGROUND_INVERTED,
+        children: 'Button',
+    },
+}
