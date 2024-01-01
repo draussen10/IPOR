@@ -1,5 +1,6 @@
-import {fireEvent, render, screen} from '@testing-library/react'
+import {fireEvent, screen} from '@testing-library/react'
 import Sidebar from './Sidebar'
+import {componentRender} from 'shared/config/tests/componentRender'
 
 jest.mock('react-i18next', () => ({
     useTranslation: () => {
@@ -18,12 +19,12 @@ jest.mock('react-i18next', () => ({
 
 describe('Sidebar', () => {
     test('getByTestId', () => {
-        render(<Sidebar></Sidebar>)
+        componentRender(<Sidebar></Sidebar>)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     })
 
     test('Hovering', () => {
-        render(<Sidebar></Sidebar>)
+        componentRender(<Sidebar></Sidebar>)
         expect(screen.getByTestId('sidebar')).toHaveStyle('width: var(--sidebar-width-collapsed)')
         fireEvent.mouseEnter(screen.getByTestId('sidebar'))
         expect(screen.getByTestId('sidebar')).toHaveStyle('width: var(--sidebar-width)')
