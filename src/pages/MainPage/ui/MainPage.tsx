@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import Button from 'shared/ui/Button/ui/Button'
+import Button from 'shared/ui/Button/Button'
 
 const MainPage = () => {
     const [error, setError] = useState(false)

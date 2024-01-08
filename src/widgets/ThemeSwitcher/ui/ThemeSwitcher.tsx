@@ -4,14 +4,12 @@ import {ComponentProps} from 'shared/types/ComponentProps'
 import {Theme, useTheme} from 'app/providers/ThemeProvider'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
-import {ThemeButton} from 'shared/ui/Button'
-import Button from 'shared/ui/Button/ui/Button'
+import {ThemeButton} from 'shared/ui/Button/Button'
+import Button from 'shared/ui/Button/Button'
 
 export interface ThemeSwitcherProps extends ComponentProps {}
 
-
-
-const ThemeSwitcher: FC<ThemeSwitcherProps> = (props) => {
+const ThemeSwitcher: FC<ThemeSwitcherProps> = () => {
     const {theme, toggleTheme} = useTheme()
 
     return (

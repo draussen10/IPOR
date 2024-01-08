@@ -1,9 +1,8 @@
 import React,{ FC } from 'react'
 import cls from './LanguageSwitcher.module.scss'
 import {ComponentProps} from 'shared/types/ComponentProps'
-import {ThemeButton} from 'shared/ui/Button'
 import {useTranslation} from 'react-i18next'
-import Button from 'shared/ui/Button/ui/Button'
+import Button, {ThemeButton} from 'shared/ui/Button/Button'
 
 export interface LanguageSwitcherProps extends ComponentProps {}
 

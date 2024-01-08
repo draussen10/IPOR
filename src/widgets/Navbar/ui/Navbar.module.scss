@@ -4,10 +4,8 @@
   background: var(--inverted-bg-color);
   display: flex;
   align-items: center;
+  justify-content: end;
   padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
 
   & .links {
     margin-left: auto;
@@ -20,8 +18,4 @@
       }
     }
   }
-}
-
-.notFixed {
-  position: static;
 }

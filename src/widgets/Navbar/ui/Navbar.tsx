@@ -1,14 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import classes from './Navbar.module.scss'
-import {RoutePath} from 'shared/config/routeConfig/routeConfig'
 import {classNames} from 'shared/lib/classNames'
 import {ComponentProps} from 'shared/types/ComponentProps'
-import AppLink from 'shared/ui/AppLink/AppLink'
+import Button, {ThemeButton} from 'shared/ui/Button/Button'
+import Modal from 'shared/ui/Modal/Modal'
 
 interface NavbarProps extends ComponentProps {
 }
 
 const Navbar = ({className}: NavbarProps) => {
+    const [isAuthModal, setIsAuthModal] = useState(false)
+
     return (
         <div className={classNames(
             classes.navbar,
@@ -16,9 +18,19 @@ const Navbar = ({className}: NavbarProps) => {
             [className]
         )}>
 
-            <div className={classes.links}>
-                <AppLink to={RoutePath.main}>/</AppLink>
-            </div>
+            <Button
+                theme={ThemeButton.OUTLINED}
+                onClick={() => setIsAuthModal(true)}
+            >
+                Войти
+            </Button>
+
+            <Modal
+                isOpen={isAuthModal}
+                onClose={() => setIsAuthModal(false)}
+            >
+                123
+            </Modal>
         </div>
     )
 }
