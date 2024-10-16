@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // Нельзя использовать переменные без явного указания типа
+    "noImplicitAny": true,
+    "module": "ESNext",
+    "target": "es6",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Позволяет использовать модули 'module.exports' и 'require' как 'import {} from'
+    "esModuleInterop": true,
+    // Позволяет не писать везде * as ...
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    }
+  },
+  // Т.к. "module": "ESNext" нужно добавить настройки для компиляции (поддерживается только CommonJS)
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
