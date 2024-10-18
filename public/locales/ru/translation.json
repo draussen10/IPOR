@@ -9,6 +9,9 @@
   "error": "Произошла ошибка",
   "reload": "Обновить",
   "signIn": "Войти",
+  "signOut": "Выйти",
   "login": "Имя пользователя",
-  "password": "Пароль"
+  "password": "Пароль",
+  "loginFormTitle": "Форма авторизации",
+  "loginFormErrorText": "Неверное имя или пароль"
 }

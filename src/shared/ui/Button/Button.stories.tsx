@@ -92,3 +92,10 @@ export const Size_XL: Story = {
         size: ButtonSize.XL
     }
 };
+
+export const Disabled: Story = {
+    args: {
+        children: 'Text',
+        disabled: true
+    }
+};

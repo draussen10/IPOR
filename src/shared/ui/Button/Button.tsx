@@ -37,8 +37,15 @@ export const Button: FC<ButtonProps> = (props) => {
         <button
             className={classNames(
                 styles.button,
-                {[styles.square]: square},
-                [className, styles[theme], styles[size]]
+                {
+                    [styles.square]: square,
+                    [styles.disabled]: otherProps.disabled
+                },
+                [
+                    className,
+                    styles[theme],
+                    styles[size]
+                ]
             )}
             {...otherProps}
         >

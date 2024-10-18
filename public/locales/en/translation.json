@@ -9,6 +9,10 @@
   "error": "App has error",
   "reload": "Reload",
   "signIn": "Sign in",
+  "signOut": "Sign out",
   "login": "Login",
-  "password": "Password"
+  "password": "Password",
+  "loginFormTitle": "Login Form",
+  "loginFormErrorText": "Incorrent username or password"
+
 }
