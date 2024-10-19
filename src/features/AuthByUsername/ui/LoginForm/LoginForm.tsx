@@ -6,18 +6,30 @@ import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {Input} from 'shared/ui/Input/Input';
 import {useDispatch, useSelector} from 'react-redux';
 import {memo, useCallback} from 'react';
-import {loginActions} from '../../model/slice/loginSlice';
-import {getLoginState} from '../../model/selectors/getLoginState/getLoginState';
+import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername';
+import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername';
+import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
+import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
+import {useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
 
 interface LoginFormProps {
     className?: string
 }
 
-export const LoginForm = memo(({className}: LoginFormProps) => {
+const LoginForm = memo(({className}: LoginFormProps) => {
     const dispatch = useDispatch();
     const {t} = useTranslation();
-    const {username, password, isLoading, error} = useSelector(getLoginState);
+
+    const username = useSelector(getLoginUsername);
+    const password = useSelector(getLoginPassword);
+    const isLoading = useSelector(getLoginIsLoading);
+    const error = useSelector(getLoginError);
+
+    useReducerManager({
+        loginForm: loginReducer
+    });
 
     const onChangeUsername = useCallback((value: string) => {
         dispatch(loginActions.setUsername(value));
@@ -60,3 +72,5 @@ export const LoginForm = memo(({className}: LoginFormProps) => {
         </div>
     );
 });
+
+export default LoginForm;

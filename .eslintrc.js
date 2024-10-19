@@ -37,6 +37,7 @@ module.exports = {
         "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
         "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
         'react/prop-types': 'off',
+        '@typescript-eslint/no-dynamic-delete': 'off',
     },
     globals: {
         __IS_DEV__: true
