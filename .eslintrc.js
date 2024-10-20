@@ -38,6 +38,7 @@ module.exports = {
         "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
         'react/prop-types': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
+        '@typescript-eslint/unbound-method': 'off',
     },
     globals: {
         __IS_DEV__: true
