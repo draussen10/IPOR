@@ -11,20 +11,6 @@
   flex-direction: column;
   width: fit-content;
   margin: 20px auto auto;
-
-  .item {
-    margin-top: 10px;
-
-    .itemContainer {
-      display: flex;
-      align-items: center;
-    }
-  }
-}
-
-.icon {
-  margin-right: 10px;
-  fill: var(--invert-primary-color);
 }
 
 .switchers {
@@ -54,14 +40,5 @@
     .lang {
       margin-left: 0;
     }
-  }
-
-  .icon {
-    margin-right: 0;
-  }
-
-  .link {
-    opacity: 0;
-    width: 0;
   }
 }

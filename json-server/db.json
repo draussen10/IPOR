@@ -11,6 +11,13 @@
     { "id": "1", "username": "admin", "password": "123" }
   ],
   "profile": {
-    "name": "typicode"
+    "firstname": "Алексей",
+    "lastname": "Боев",
+    "age": 24,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Saint-Petersburg",
+    "username": "draussen",
+    "avatar": "https://sun9-43.userapi.com/impg/PMwq3vCFMcMM8c-PRSDrmnZdh69aW4up5BYCNQ/Sz5_CHfgZRU.jpg?size=2560x1707&quality=96&sign=ce64061238ac139f0ed70f525ab8ba24&type=album"
   }
 }

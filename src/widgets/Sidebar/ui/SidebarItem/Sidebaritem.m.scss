@@ -1,0 +1,28 @@
+.item {
+  margin-top: 10px;
+
+  .itemContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .link {
+    height: var(--font-line-m);
+  }
+}
+
+.icon {
+  margin-right: 10px;
+  fill: var(--invert-primary-color);
+}
+
+.item.collapsed {
+  .icon {
+    margin-right: 0;
+  }
+
+  .link {
+    opacity: 0;
+    width: 0;
+  }
+}
