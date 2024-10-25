@@ -14,6 +14,7 @@ const paths: BuildPaths = {
 
 const buildConfig: BuildOptions = {
     isDev: true,
+    apiUrl: '',
     analyze: false,
     paths,
     port: 9000,
@@ -37,7 +38,8 @@ export default ({config}: { config: webpack.Configuration }) => {
     });
 
     config.plugins.push(new DefinePlugin({
-        __IS_DEV__: true
+        __IS_DEV__: true,
+        __API__: ''
     }));
 
     config.module.rules.push(buildCssLoader(buildConfig));

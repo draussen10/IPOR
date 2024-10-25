@@ -12,6 +12,7 @@ export default (env: BuildEnv) => {
     const mode = env.mode || 'development';
     const PORT = env.port || 9000;
     const analyze = env.analyze || false;
+    const apiUrl = env.apiUrl || 'http://localhost:9050';
 
     const paths: BuildPaths = {
         src: path.resolve(__dirname, 'src'),
@@ -27,6 +28,7 @@ export default (env: BuildEnv) => {
         paths,
         isDev,
         port: PORT,
-        analyze
+        analyze,
+        apiUrl
     });
 };
