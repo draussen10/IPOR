@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createReduxStore} from '../config/store';
 import {type StateSchema} from '../config/StateSchema';
-import {type DeepPartial, type ReducersMapObject} from '@reduxjs/toolkit';
+import {type ReducersMapObject} from '@reduxjs/toolkit';
 
 interface StoreProviderProps {
     children?: ReactNode

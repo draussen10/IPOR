@@ -43,10 +43,11 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({username, password}));
+
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess();
         }
-    }, [dispatch, password, username]);
+    }, [dispatch, onSuccess, password, username]);
 
     return (
         <div className={classNames(styles.loginForm, {}, [className])}>

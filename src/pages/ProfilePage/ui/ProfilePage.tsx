@@ -1,8 +1,8 @@
-import {type FC} from 'react';
+import {type FC, useEffect} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
-import {profileReducer} from 'entities/Profile';
+import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile';
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -13,7 +13,11 @@ interface ProfilePageProps {
 }
 
 const ProfilePage: FC<ProfilePageProps> = (props) => {
-    const {t} = useTranslation();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(fetchProfileData());
+    }, [dispatch]);
 
     useReducerManager(reducers, true);
 
@@ -23,7 +27,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 
     return (
         <div className={classNames('', {}, [className])}>
-            {t('PROFILE')}
+            <ProfileCard />
         </div>
     );
 };

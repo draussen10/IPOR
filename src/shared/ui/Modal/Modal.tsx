@@ -1,4 +1,4 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames, type Mods} from 'shared/lib/classNames/classNames';
 import styles from './Modal.m.scss';
 import React, {type ComponentProps, type FC, useCallback, useEffect, useRef, useState} from 'react';
 import {Portal} from 'shared/ui/Portal/Portal';
@@ -63,7 +63,7 @@ export const Modal: FC<ModalProps> = (props) => {
         e.stopPropagation();
     };
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [styles.opened]: isOpen,
         [styles.isClosing]: isClosing
     };

@@ -39,6 +39,8 @@ module.exports = {
         'react/prop-types': 'off',
         '@typescript-eslint/no-dynamic-delete': 'off',
         '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-non-null-assertion': 'off',
+        '@typescript-eslint/no-invalid-void-type': 'off',
     },
     globals: {
         __IS_DEV__: true,
