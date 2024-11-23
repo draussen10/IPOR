@@ -15,10 +15,20 @@
   color: var(--invert-primary-color);
 }
 
-.outline {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+.outline,
+.outline_red {
+  border: 1px solid;
   background: none;
+}
+
+.outline {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.outline_red {
+  color: var(--red-light);
+  border-color: var(--red-light);
 }
 
 .background {

@@ -1,23 +1,43 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    }
   ],
   "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": "1"
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": "1"
+    }
   ],
   "users": [
-    { "id": "1", "username": "admin", "password": "123" }
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
   ],
   "profile": {
-    "firstname": "Алексей",
+    "firstname": "Алекс",
     "lastname": "Боев",
     "age": 24,
     "currency": "RUB",
     "country": "Russia",
     "city": "Saint-Petersburg",
-    "username": "draussen",
+    "username": "draussen10",
     "avatar": "https://sun9-43.userapi.com/impg/PMwq3vCFMcMM8c-PRSDrmnZdh69aW4up5BYCNQ/Sz5_CHfgZRU.jpg?size=2560x1707&quality=96&sign=ce64061238ac139f0ed70f525ab8ba24&type=album"
   }
 }

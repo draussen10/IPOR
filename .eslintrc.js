@@ -20,7 +20,7 @@ module.exports = {
         '@typescript-eslint/object-curly-spacing': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/react-in-jsx-scope': 'off',
-        '@typescript-eslint/semi': [1, 'always'],
+        '@typescript-eslint/semi': ["error", "always"],
         '@typescript-eslint/strict-boolean-expressions': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         '@typescript-eslint/naming-convention': 'off',
@@ -44,7 +44,8 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true,
-        __API__: true
+        __API__: true,
+        __PROJECT__: true
     },
     overrides: [
         {

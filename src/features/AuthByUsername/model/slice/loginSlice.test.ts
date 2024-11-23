@@ -1,6 +1,6 @@
-import {loginReducer, type LoginSchema} from 'features/AuthByUsername';
-import {loginActions} from 'features/AuthByUsername/model/slice/loginSlice';
-import {loginByUsername} from 'features/AuthByUsername/model/services/loginByUsername/loginByUsername';
+import { type LoginSchema} from '../types/loginSchema';
+import {loginActions, loginReducer} from './loginSlice';
+import {loginByUsername} from '../services/loginByUsername/loginByUsername';
 
 describe('loginSlice.test', () => {
     test('test set username', () => {

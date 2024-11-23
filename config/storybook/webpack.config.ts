@@ -18,7 +18,8 @@ const buildConfig: BuildOptions = {
     analyze: false,
     paths,
     port: 9000,
-    mode: 'development'
+    mode: 'development',
+    project: 'storybook'
 };
 
 export default ({config}: { config: webpack.Configuration }) => {
@@ -26,7 +27,7 @@ export default ({config}: { config: webpack.Configuration }) => {
         paths.src,
         'node_modules'
     ];
-    config.resolve!.extensions!.push('.tsx', 'ts', '.js');
+    config.resolve!.extensions!.push('.tsx', '.ts', '.js');
 
     const rules = config.module!.rules as RuleSetRule[];
 
@@ -40,8 +41,9 @@ export default ({config}: { config: webpack.Configuration }) => {
     });
 
     config.plugins!.push(new DefinePlugin({
-        __IS_DEV__: true,
-        __API__: ''
+        __IS_DEV__: JSON.stringify(true),
+        __API__: JSON.stringify(''),
+        __PROJECT__: JSON.stringify('storybook')
     }));
 
     config.module!.rules.push(buildCssLoader(buildConfig));
