@@ -1,9 +1,9 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {type ThunkOptions} from 'app/providers/StoreProvider';
-import {type Article} from '../../types/article';
+import {type Comment} from 'entities/Comment';
 
-export const fetchArticleById = createAsyncThunk<Article, string | undefined, ThunkOptions<string>>(
-    'articleDetails/fetchArticlesById',
+export const fetchCommentsByArticleId = createAsyncThunk<Comment[], string | undefined, ThunkOptions<string>>(
+    'article/fetchCommentsByArticleId',
     async (articleId, thunkAPI) => {
         const {extra, rejectWithValue} = thunkAPI;
 
@@ -12,7 +12,12 @@ export const fetchArticleById = createAsyncThunk<Article, string | undefined, Th
         }
 
         try {
-            const response = await extra.api.get<Article>(`/articles/${articleId}`);
+            const response = await extra.api.get<Comment[]>('/comments', {
+                params: {
+                    articleId,
+                    _expand: 'user'
+                }
+            });
 
             if (!response.data) {
                 throw new Error();
@@ -20,7 +25,6 @@ export const fetchArticleById = createAsyncThunk<Article, string | undefined, Th
 
             return response.data;
         } catch (e) {
-            console.log(e);
             return rejectWithValue('error');
         }
     }

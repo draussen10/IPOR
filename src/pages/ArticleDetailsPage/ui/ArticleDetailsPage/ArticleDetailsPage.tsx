@@ -1,5 +1,6 @@
 import {type FC, memo, useEffect} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
+import {Text} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetailsPage.m.scss';
 import {ArticleDetails} from 'entities/Article';
@@ -14,9 +15,16 @@ import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/l
 import {fetchArticleById} from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import {articleDetailsReducer} from 'entities/Article/model/slice/articleDetailsSlice';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {CommentList} from 'entities/Comment';
+import {articleDetailsCommentsReducer, getArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
+import {getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading} from '../../model/selectors/commets';
+import {
+    fetchCommentsByArticleId
+} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const reducers: ReducerList = {
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
+    articleDetailsComments: articleDetailsCommentsReducer
 };
 
 interface ArticleDetailsPageProps {
@@ -29,15 +37,20 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const {className} = props;
     const dispatch = useAppDispatch();
 
-    const isLoading = useSelector(getArticleDetailsIsLoading);
-    const error = useSelector(getArticleDetailsError);
-    const data = useSelector(getArticleDetailsData);
+    const isLoadingArticle = useSelector(getArticleDetailsIsLoading);
+    const errorArticle = useSelector(getArticleDetailsError);
+    const dataArticle = useSelector(getArticleDetailsData);
+
+    const isLoadingComments = useSelector(getArticleDetailsCommentsIsLoading);
+    const errorComments = useSelector(getArticleDetailsCommentsError);
+    const dataComments = useSelector(getArticleComments.selectAll);
 
     useReducerManager(reducers, true);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            id && dispatch(fetchArticleById(id));
+            dispatch(fetchArticleById(id));
+            dispatch(fetchCommentsByArticleId(id));
         }
     }, [dispatch, id]);
 
@@ -52,9 +65,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     return (
         <div className={classNames(styles.articleDetailsPage, {}, [className])}>
             <ArticleDetails
-                data={data}
-                error={error}
-                isLoading={isLoading}
+                data={dataArticle}
+                error={errorArticle}
+                isLoading={isLoadingArticle}
+            />
+            <Text className={styles.commentTitle} title={t('commentTitle')} />
+            <CommentList
+                comments={dataComments}
+                isLoading={isLoadingComments}
+                error={errorComments}
             />
         </div>
     );
