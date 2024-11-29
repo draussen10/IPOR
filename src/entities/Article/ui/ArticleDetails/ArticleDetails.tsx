@@ -1,0 +1,92 @@
+import {type FC, memo, useCallback} from 'react';
+import {classNames} from 'shared/lib/classNames/classNames';
+import {useTranslation} from 'react-i18next';
+import styles from './ArticleDetails.m.scss';
+import {Text, TextAlign, TextSize} from 'shared/ui/Text/Text';
+import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
+import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
+import {Icon} from 'shared/ui/Icon/Icon';
+import {type Article, type ArticleBlock, ArticleBlockType} from '../../model/types/article';
+import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent';
+import {ArticleBlockCodeComponent} from '../ArticleBlockCodeComponent/ArticleBlockCodeComponent';
+import {ArticleBlockImageComponent} from '../ArticleBlockImageComponent/ArticleBlockImageComponent';
+
+interface ArticleDetailsProps {
+    className?: string
+    isLoading?: boolean
+    error?: string
+    data?: Article
+}
+export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
+    const {t} = useTranslation();
+
+    const {
+        className,
+        data,
+        error,
+        isLoading
+    } = props;
+
+    const renderBlock = useCallback((block: ArticleBlock) => {
+        switch (block.type) {
+            case ArticleBlockType.TEXT:
+                return <ArticleBlockTextComponent className={styles.block} block={block} />;
+            case ArticleBlockType.CODE:
+                return <ArticleBlockCodeComponent className={styles.block} block={block} />;
+            case ArticleBlockType.IMAGE:
+                return <ArticleBlockImageComponent className={styles.block} block={block} />;
+            default:
+                return null;
+        }
+    }, []);
+
+    return (
+        <div className={classNames(styles.articleDetails, {}, [className])}>
+            {isLoading && (
+                <>
+                    <Skeleton className={styles.avatar} width={200} height={200} borderRadius={'50%'} />
+                    <Skeleton className={styles.title} width={300} height={24} />
+                    <Skeleton className={styles.skeleton} width={600} height={24} />
+                    <Skeleton className={styles.skeleton} width={'100%'} height={200} />
+                    <Skeleton className={styles.skeleton} width={'100%'} height={400} />
+                    <Skeleton className={styles.skeleton} width={'100%'} height={200} />
+                </>
+            )}
+
+            {error && (
+                <Text
+                    title={t('articleLoadingError')}
+                    align={TextAlign.CENTER}
+                />
+            )}
+
+            {data && (
+                <>
+                    <div className={styles.avatarWrapper} >
+                        <Avatar src={data.img} size={200} />
+                    </div>
+
+                    <Text
+                        title={data.title}
+                        text={data.subtitle}
+                        size={TextSize.L}
+                    />
+
+                    <div className={styles.articleInfo}>
+                        <Icon Svg={EyeIcon} className={styles.icon} />
+                        <Text text={String(data.views)} size={TextSize.L} />
+                    </div>
+
+                    <div className={styles.articleInfo}>
+                        <Icon Svg={CalendarIcon} className={styles.icon} />
+                        <Text text={data.createdAt} size={TextSize.L} />
+                    </div>
+
+                    {data.blocks.map(renderBlock)}
+                </>
+            )}
+        </div>
+    );
+});

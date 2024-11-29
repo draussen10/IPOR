@@ -23,7 +23,7 @@ export const AppLink: FC<AppLinkProps> = memo((props) => {
 
     return (
         <Link
-            className={classNames('', {}, [className, styles[theme]])}
+            className={classNames(styles.appLink, {}, [className, styles[theme]])}
             {...linkProps}
         >
             {children}
