@@ -1,4 +1,4 @@
-import {type FC, memo, useEffect} from 'react';
+import {type FC, memo, useCallback, useEffect} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {Text} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
@@ -21,6 +21,8 @@ import {getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading} from
 import {
     fetchCommentsByArticleId
 } from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {AddCommentForm} from 'features/addCommentForm';
+import {addCommentForArticle} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
@@ -54,6 +56,10 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         }
     }, [dispatch, id]);
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentForArticle(text));
+    }, [dispatch]);
+
     if (!id && __PROJECT__ !== 'storybook') {
         return (
             <div className={classNames(styles.articleDetailsPage, {}, [className])}>
@@ -70,6 +76,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 isLoading={isLoadingArticle}
             />
             <Text className={styles.commentTitle} title={t('commentTitle')} />
+            <AddCommentForm
+                onSendComment={onSendComment}
+            />
             <CommentList
                 comments={dataComments}
                 isLoading={isLoadingComments}

@@ -54,7 +54,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
             <Text title={t('loginFormTitle')} />
             {error && <Text text={t('loginFormErrorText')} theme={TextTheme.ERROR} />}
             <Input
-                type='text'
+                type=''
                 className={styles.input}
                 label={t('login')}
                 onChange={onChangeUsername}
@@ -62,7 +62,7 @@ const LoginForm = memo(({className, onSuccess}: LoginFormProps) => {
                 autofocus
             />
             <Input
-                type='text'
+                type='password'
                 className={styles.input}
                 label={t('password')}
                 onChange={onChangePassword}

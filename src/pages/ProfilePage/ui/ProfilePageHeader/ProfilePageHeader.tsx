@@ -3,8 +3,10 @@ import {useTranslation} from 'react-i18next';
 import styles from './ProfilePageHeader.m.scss';
 import {Text} from 'shared/ui/Text/Text';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
-import {profileActions, updateProfileData} from 'entities/Profile';
+import {getProfileData, profileActions, updateProfileData} from 'entities/Profile';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {useSelector} from 'react-redux';
+import {getUserAuthData} from 'entities/User';
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -13,10 +15,13 @@ interface ProfilePageHeaderProps {
 
 export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
     const {t} = useTranslation();
+    const dispatch = useAppDispatch();
 
     const {readonly} = props;
+    const authData = useSelector(getUserAuthData);
+    const profileData = useSelector(getProfileData);
 
-    const dispatch = useAppDispatch();
+    const canEdit = authData?.id === profileData?.id;
 
     const onEdit = useCallback(() => {
         dispatch(profileActions.setReadonly(false));
@@ -33,36 +38,38 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
     return (
         <div className={styles.header}>
             <Text title={t('title')} />
-            <div className={styles.btns}>
-                {readonly
-                    ? (
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            className={styles.editBtn}
-                            onClick={onEdit}
-                        >
-                            {t('edit')}
-                        </Button>
-                    )
-                    : (
-                        <>
-                            <Button
-                                theme={ButtonTheme.OUTLINE_RED}
-                                className={styles.editBtn}
-                                onClick={onCancelEdit}
-                            >
-                                {t('cancel')}
-                            </Button>
+            {canEdit && (
+                <div className={styles.btns}>
+                    {readonly
+                        ? (
                             <Button
                                 theme={ButtonTheme.OUTLINE}
                                 className={styles.editBtn}
-                                onClick={onSave}
+                                onClick={onEdit}
                             >
-                                {t('save')}
+                                {t('edit')}
                             </Button>
-                        </>
-                    )}
-            </div>
+                        )
+                        : (
+                            <>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE_RED}
+                                    className={styles.editBtn}
+                                    onClick={onCancelEdit}
+                                >
+                                    {t('cancel')}
+                                </Button>
+                                <Button
+                                    theme={ButtonTheme.OUTLINE}
+                                    className={styles.editBtn}
+                                    onClick={onSave}
+                                >
+                                    {t('save')}
+                                </Button>
+                            </>
+                        )}
+                </div>
+            )}
         </div>
     );
 });

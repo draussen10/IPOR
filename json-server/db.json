@@ -102,6 +102,60 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "1",
+      "id": "q0UXHEZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Ну, такое себе, если честно...",
+      "id": "a1KrqCh"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "121",
+      "id": "Tuuur8T"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "Мой первый пост",
+      "id": "EmGacdr"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12",
+      "id": "ywCqgDI"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "12",
+      "id": "hZ0-jk0"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "111111",
+      "id": "QMI-yEj"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fa",
+      "id": "rHeTtuh"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "zafsf",
+      "id": "l32xssl"
     }
   ],
   "users": [
@@ -120,14 +174,28 @@
       "avatar": "https://yt3.ggpht.com/yti/ANjgQV9qSjfn4m9okN6eeN0oY2qhSnXV3ZyBmYieDtCkrxyja-Q=s88-c-k-c0x00ffffff-no-rj"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://yt3.ggpht.com/yti/ANjgQV9qSjfn4m9okN6eeN0oY2qhSnXV3ZyBmYieDtCkrxyja-Q=s88-c-k-c0x00ffffff-no-rj"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Fktrctq",
+      "lastname": "asf",
+      "age": 465,
+      "currency": "RUB",
+      "country": "Belarus",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://yt3.ggpht.com/yti/ANjgQV9qSjfn4m9okN6eeN0oY2qhSnXV3ZyBmYieDtCkrxyja-Q=s88-c-k-c0x00ffffff-no-rj"
+    },
+    {
+      "id": "2",
+      "firstname": "Second",
+      "lastname": "Second",
+      "age": 1,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Saint-Petersburg",
+      "username": "user",
+      "avatar": "https://avatars.mds.yandex.net/i?id=e1279f63909852806445c1e7bc66a5d1_l-5232689-images-thumbs&n=13"
+    }
+  ]
 }

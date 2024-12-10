@@ -4,6 +4,7 @@
   background: var(--invert-bg-color);
   position: relative;
   transition: width 0.125s ease;
+  flex-shrink: 0;
 }
 
 .items {

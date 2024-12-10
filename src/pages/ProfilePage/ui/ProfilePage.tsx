@@ -20,6 +20,7 @@ import {type Currency} from 'entities/Currency/model/types/currency';
 import {type Country} from 'entities/Country/model/types/country';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
+import {useParams} from 'react-router-dom';
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -31,8 +32,8 @@ interface ProfilePageProps {
 
 const ProfilePage: FC<ProfilePageProps> = (props) => {
     const {t} = useTranslation('profile');
-
     const dispatch = useAppDispatch();
+    const {id} = useParams<{ id: string }>();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -52,9 +53,11 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+            if (id) {
+                dispatch(fetchProfileData(id));
+            }
         }
-    }, [dispatch]);
+    }, [dispatch, id]);
 
     const {
         className
