@@ -1,7 +1,15 @@
 .articleDetailsPage {
-  // empty
+  min-height: 100%;
 }
 
 .commentTitle {
   margin-top: 25px;
+}
+
+.recommendations {
+  margin-top: 25px;
+  padding-bottom: 10px;
+  flex-wrap: nowrap !important;
+  overflow-y: hidden;
+  overflow-x: auto;
 }

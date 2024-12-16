@@ -21,6 +21,7 @@ import {type Country} from 'entities/Country/model/types/country';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
 import {useParams} from 'react-router-dom';
+import {Page} from 'widgets/Page/Page';
 
 const reducers: ReducerList = {
     profile: profileReducer
@@ -96,7 +97,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(styles.profile, {}, [className])}>
+        <Page className={classNames(styles.profile, {}, [className])}>
             <ProfilePageHeader readonly={readonly} />
             {validateErrors?.length && validateErrors?.map(err => (
                 <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
@@ -115,7 +116,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
                 onChangeCurrency={onChangeCurrency}
                 onChangeCountry={onChangeCountry}
             />
-        </div>
+        </Page>
     );
 };
 

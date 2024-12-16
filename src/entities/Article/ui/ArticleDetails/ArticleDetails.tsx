@@ -43,7 +43,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     }, []);
 
     return (
-        <div className={classNames(styles.articleDetails, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             {isLoading && (
                 <>
                     <Skeleton className={styles.avatar} width={200} height={200} borderRadius={'50%'} />

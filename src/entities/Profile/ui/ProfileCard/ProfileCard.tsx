@@ -56,7 +56,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     if (error) {
         return (
             <div className={classNames(styles.profileCard, {}, [className, styles.error])}>
-                <Text theme={TextTheme.ERROR} align={TextAlign.CENTER} title={t('loadingError')} text={'tryReload'} />
+                <Text theme={TextTheme.ERROR} align={TextAlign.CENTER} title={t('loadingError')} text={t('tryReload')} />
             </div>
         );
     }

@@ -1,10 +1,10 @@
 import {useEffect} from 'react';
 import {useDispatch, useStore} from 'react-redux';
-import {type StateSchemaKey, type ReduxStoreWithManager} from '../config/StateSchema';
+import {type StateSchemaKey, type ReduxStoreWithManager, type StateSchema} from '../config/StateSchema';
 import {type Reducer} from '@reduxjs/toolkit';
 
 export type ReducerList = {
-    [name in StateSchemaKey]?: Reducer
+    [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>
 };
 
 export function useReducerManager (reducers: ReducerList, removeAfterUnmount: boolean = true) {

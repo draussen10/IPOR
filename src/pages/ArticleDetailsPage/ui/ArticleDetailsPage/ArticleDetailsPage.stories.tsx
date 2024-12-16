@@ -4,6 +4,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecora
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import {type Article, ArticleBlockType, ArticleType} from 'entities/Article';
+import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
 
 const article: Article = {
     id: '1',
@@ -13,6 +14,11 @@ const article: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: ProfileIcon
+    },
     blocks: [
         {
             id: '1',

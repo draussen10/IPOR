@@ -4,7 +4,7 @@ import AvatarImg from 'shared/assets/test/storybook_profile.jpg';
 
 const meta: Meta<typeof CommentList> = {
     component: CommentList,
-    title: 'entities/CommentList'
+    title: 'entities/Comment/CommentList'
 };
 
 export default meta;

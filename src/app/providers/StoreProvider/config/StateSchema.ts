@@ -4,22 +4,25 @@ import {type UserSchema} from 'entities/User';
 import {type LoginSchema} from 'features/AuthByUsername';
 import {type ReducerManager} from './reducerManager';
 import {type ProfileSchema} from 'entities/Profile';
-import {type NavigateOptions, type To} from 'react-router-dom';
 import {type AxiosInstance} from 'axios';
 import {type ArticleDetailsSchema} from 'entities/Article';
-import {type ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage';
 import {type AddCommentFormSchema} from 'features/addCommentForm';
+import {type ArticlesPageSchema} from 'pages/ArticlesPage';
+import {type UISchema} from 'features/UI';
+import {type ArticleDetailsPageSchema} from 'pages/ArticleDetailsPage';
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
+    ui: UISchema
 
     // async
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -30,7 +33,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 interface ThunkExtraArg {
     api: AxiosInstance
-    navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkOptions<RejectValue> {

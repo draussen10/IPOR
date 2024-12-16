@@ -2,6 +2,7 @@ import {type ArticleDetailsSchema} from '../types/articleDetailsSchema';
 import {articleDetailsReducer} from './articleDetailsSlice';
 import {fetchArticleById} from '../services/fetchArticleById/fetchArticleById';
 import {type Article, ArticleBlockType, ArticleType} from '../types/article';
+import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
 
 const data: Article = {
     id: '1',
@@ -10,6 +11,11 @@ const data: Article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: ProfileIcon
+    },
     type: [ArticleType.IT],
     blocks: [
         {

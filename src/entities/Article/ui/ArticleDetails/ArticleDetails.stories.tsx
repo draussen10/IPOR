@@ -4,6 +4,7 @@ import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecora
 import {Theme} from 'app/providers/ThemeProvider';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import {type Article, ArticleBlockType, ArticleType} from '../../model/types/article';
+import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
 
 const article: Article = {
     id: '1',
@@ -11,6 +12,11 @@ const article: Article = {
     subtitle: 'Что нового в JS за 2022 год?',
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
+    user: {
+        id: '1',
+        username: 'admin',
+        avatar: ProfileIcon
+    },
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
     blocks: [
@@ -77,7 +83,7 @@ const article: Article = {
 
 const meta: Meta<typeof ArticleDetails> = {
     component: ArticleDetails,
-    title: 'entities/ArticleDetails'
+    title: 'entities/Article/ArticleDetails'
 };
 
 export default meta;

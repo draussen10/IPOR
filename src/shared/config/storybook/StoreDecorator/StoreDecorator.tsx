@@ -5,14 +5,14 @@ import {profileReducer} from 'entities/Profile';
 import {type ReducerList} from 'app/providers/StoreProvider/lib/useReducerManager';
 import {articleDetailsReducer} from 'entities/Article';
 import {addCommentFormReducer} from 'features/addCommentForm';
-import {articleDetailsCommentsReducer} from 'pages/ArticleDetailsPage';
+import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage';
 
 const defaultAsyncReducers: ReducerList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsComments: articleDetailsCommentsReducer
+    articleDetailsPage: articleDetailsPageReducer
 };
 
 export const StoreDecorator = (
