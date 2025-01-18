@@ -18,7 +18,9 @@ export default (env: BuildEnv) => {
         src: path.resolve(__dirname, 'src'),
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
         output: path.resolve(__dirname, 'dist'),
-        html: path.resolve(__dirname, 'public', 'index.html')
+        html: path.resolve(__dirname, 'public', 'index.html'),
+        locales: path.resolve(__dirname, 'public', 'locales'),
+        buildLocales: path.resolve(__dirname, 'dist', 'locales')
     };
 
     const isDev = mode === 'development';

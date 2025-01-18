@@ -9,7 +9,9 @@ const paths: BuildPaths = {
     src: path.resolve(__dirname, '..', '..', 'src'),
     html: '',
     output: '',
-    entry: ''
+    entry: '',
+    buildLocales: '',
+    locales: ''
 };
 
 const buildConfig: BuildOptions = {

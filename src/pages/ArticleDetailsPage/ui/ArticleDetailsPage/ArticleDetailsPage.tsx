@@ -4,7 +4,7 @@ import {Text, TextSize} from 'shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetailsPage.m.scss';
 import {ArticleDetails, ArticleList} from 'entities/Article';
-import {useNavigate, useParams} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {
     getArticleDetailsData,
@@ -21,8 +21,6 @@ import {getArticleDetailsCommentsError, getArticleDetailsCommentsIsLoading} from
 import {fetchCommentsByArticleId} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {AddCommentForm} from 'features/addCommentForm';
 import {addCommentForArticle} from '../../model/services/addCommentForArticle/addCommentForArticle';
-import {Button} from 'shared/ui/Button/Button';
-import {RoutePath} from 'shared/config/routeConfig/routeConfig';
 import {Page} from 'widgets/Page/Page';
 import {getArticleRecommendations} from '../../model/slice/articleDetailsPageRecommendationsSlice';
 import {
@@ -32,6 +30,7 @@ import {
     fetchArticleRecommendations
 } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import {articleDetailsPageReducer} from '../../model/slice';
+import {ArticleDetailsPageHeader} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 const reducers: ReducerList = {
     articleDetails: articleDetailsReducer,
@@ -47,7 +46,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const {id} = useParams<{ id: string }>();
     const {className} = props;
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const isLoadingArticle = useSelector(getArticleDetailsIsLoading);
     const errorArticle = useSelector(getArticleDetailsError);
@@ -70,10 +68,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         }
     }, [dispatch, id]);
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     const onSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
@@ -88,9 +82,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     return (
         <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
-            <Button onClick={onBackToList}>
-                {t('backToList')}
-            </Button>
+            <ArticleDetailsPageHeader />
 
             <ArticleDetails
                 data={dataArticle}

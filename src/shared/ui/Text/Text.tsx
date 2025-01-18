@@ -4,7 +4,8 @@ import styles from './Text.m.scss';
 
 export enum TextTheme {
     DEFAULT = 'default',
-    ERROR = 'error'
+    ERROR = 'error',
+    INVERTED = 'inverted'
 }
 
 export enum TextAlign {
