@@ -13,7 +13,7 @@ module.exports = {
     plugins: [
         'react',
         'i18next',
-        "react-hooks"
+        'react-hooks'
     ],
     rules: {
         '@typescript-eslint/indent': [2, 4],
