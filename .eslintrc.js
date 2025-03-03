@@ -10,10 +10,12 @@ module.exports = {
         project: './tsconfig.json',
         tsconfigRootDir: __dirname
     },
+    ignorePatterns: ["/*", "!/src"],
     plugins: [
         'react',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'ipor'
     ],
     rules: {
         '@typescript-eslint/indent': [2, 4],
@@ -28,7 +30,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'i18next/no-literal-string': ['warn', {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to']
+                ignoreAttribute: ['data-testid', 'to', 'justify', 'align', 'direction', 'gap']
         }],
         '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/no-unsafe-argument': 'warn',
@@ -41,6 +43,7 @@ module.exports = {
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
+        'ipor/path-checker': 'error'
     },
     globals: {
         __IS_DEV__: true,

@@ -5,7 +5,7 @@ import {Theme} from 'app/providers/ThemeProvider';
 
 const meta: Meta<typeof ArticleEditPage> = {
     component: ArticleEditPage,
-    title: 'pages/AboutPage'
+    title: 'pages/ArticleEditPage'
 };
 
 export default meta;

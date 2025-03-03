@@ -1,6 +1,6 @@
 import {ArticleList} from './ArticleList';
 import {type Meta, type StoryObj} from '@storybook/react';
-import {type Article, ArticleView} from 'entities/Article';
+import {type Article, ArticleView} from '../../model/types/article';
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ProfileImg from 'shared/assets/test/storybook_profile.jpg';
 

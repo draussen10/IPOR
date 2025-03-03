@@ -21,8 +21,9 @@ import {Card} from 'shared/ui/Card/Card';
 import {Input} from 'shared/ui/Input/Input';
 import {ArticleSortSelect} from 'entities/Article';
 import {type SortOrder} from 'shared/types';
-import {fetchArticlesList} from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from 'shared/lib/hooks/useDebounce';
+import {VStack} from 'shared/ui/Stack';
 
 interface ArticlePageFiltersProps {
     className?: string
@@ -64,7 +65,7 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props) => {
     }, [debouncedFetchArticlesList, dispatch]);
 
     return (
-        <div className={classNames(styles.articlePageFilters, {}, [className])}>
+        <VStack gap="8" max className={classNames(styles.articlePageFilters, {}, [className])}>
             <div className={styles.sortWrapper}>
                 <ArticleSortSelect
                     sort={sort}
@@ -78,6 +79,6 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props) => {
                 <Input placeholder={t('Search by...')} value={search} onChange={onChangeSearch} />
             </Card>
             <ArticleTypeTabs className={styles.tabs} />
-        </div>
+        </VStack>
     );
 });

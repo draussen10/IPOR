@@ -1,4 +1,4 @@
-import {type FC, memo, useCallback} from 'react';
+import {type FC, memo, useCallback, useEffect} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetails.m.scss';
@@ -8,26 +8,49 @@ import {Avatar} from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
 import {Icon} from 'shared/ui/Icon/Icon';
-import {type Article, type ArticleBlock, ArticleBlockType} from '../../model/types/article';
+import {type ArticleBlock, ArticleBlockType} from '../../model/types/article';
 import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent';
 import {ArticleBlockCodeComponent} from '../ArticleBlockCodeComponent/ArticleBlockCodeComponent';
 import {ArticleBlockImageComponent} from '../ArticleBlockImageComponent/ArticleBlockImageComponent';
+import {useSelector} from 'react-redux';
+import {
+    getArticleDetailsData,
+    getArticleDetailsError,
+    getArticleDetailsIsLoading
+} from '../../model/selectrors/getArticleDetails';
+import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
+import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
+import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 
 interface ArticleDetailsProps {
     className?: string
-    isLoading?: boolean
-    error?: string
-    data?: Article
+    id: string
 }
+
+const reducers: ReducerList = {
+    articleDetails: articleDetailsReducer
+};
+
 export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     const {t} = useTranslation();
+    const dispatch = useAppDispatch();
+    const isLoading = useSelector(getArticleDetailsIsLoading);
+    const error = useSelector(getArticleDetailsError);
+    const data = useSelector(getArticleDetailsData);
 
     const {
         className,
-        data,
-        error,
-        isLoading
+        id
     } = props;
+
+    useReducerManager(reducers, true);
+
+    useEffect(() => {
+        if (__PROJECT__ !== 'storybook') {
+            dispatch(fetchArticleById(id));
+        }
+    }, [dispatch, id]);
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

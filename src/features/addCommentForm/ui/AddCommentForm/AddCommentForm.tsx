@@ -7,7 +7,7 @@ import {Button} from 'shared/ui/Button/Button';
 import {useSelector} from 'react-redux';
 import {
     getAddCommentFormText
-} from 'features/addCommentForm/model/selectors/addCommentFormSelectors';
+} from '../../model/selectors/addCommentFormSelectors';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/addCommentFormSlice';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
