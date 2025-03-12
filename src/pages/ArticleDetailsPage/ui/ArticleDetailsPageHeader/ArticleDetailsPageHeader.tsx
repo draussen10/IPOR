@@ -8,6 +8,7 @@ import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import { getCanEditArticle } from '../../model/selectors/article';
 import {getArticleDetailsData} from 'entities/Article';
+import {HStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
     className?: string
@@ -33,7 +34,7 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     }, [article?.id, navigate]);
 
     return (
-        <div className={classNames(styles.articleDetailsPageHeader, {}, [className])}>
+        <HStack max justify={'between'} className={classNames(styles.articleDetailsPageHeader, {}, [className])}>
             <Button onClick={onBackToList}>
                 {t('backToList')}
             </Button>
@@ -43,6 +44,6 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
                     {t('edit')}
                 </Button>
             )}
-        </div>
+        </HStack>
     );
 });

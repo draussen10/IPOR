@@ -9,7 +9,7 @@ import {Loader} from 'shared/ui/Loader/Loader';
 import {Avatar} from 'shared/ui/Avatar/Avatar';
 import {type Currency, CurrencySelect} from 'entities/Currency';
 import {type Country, CountrySelect} from 'entities/Country';
-import {VStack} from 'shared/ui/Stack';
+import {HStack, VStack} from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string
@@ -48,17 +48,17 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     if (isLoading) {
         return (
-            <VStack justify={'center'} max className={classNames(styles.profileCard, {}, [className, styles.loading])}>
+            <HStack justify={'center'} max className={classNames(styles.profileCard, {}, [className, styles.loading])}>
                 <Loader/>
-            </VStack>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <VStack justify={'center'} max className={classNames(styles.profileCard, {}, [className, styles.error])}>
+            <HStack justify={'center'} max className={classNames(styles.profileCard, {}, [className, styles.error])}>
                 <Text theme={TextTheme.ERROR} align={TextAlign.CENTER} title={t('loadingError')} text={t('tryReload')}/>
-            </VStack>
+            </HStack>
         );
     }
 
@@ -68,14 +68,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     return (
         <VStack max gap={'16'} className={classNames(styles.profileCard, mods, [className])}>
-            {data?.avatar && <Avatar src={data?.avatar}/>}
+            <HStack max justify={'center'}>{data?.avatar && <Avatar src={data?.avatar}/>}</HStack>
             <Input
                 className={styles.input}
                 value={data?.firstname}
                 label={t('firstname')}
                 readonly={readonly}
                 onChange={onChangeFirstname}
-
+                data-testid={'ProfileCard.firstname'}
             />
             <Input
                 className={styles.input}
@@ -83,6 +83,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 label={t('lastname')}
                 readonly={readonly}
                 onChange={onChangeLastname}
+                data-testid={'ProfileCard.lastname'}
             />
 
             <Input
@@ -92,6 +93,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 label={t('age')}
                 readonly={readonly}
                 onChange={onChangeAge}
+                data-testid={'ProfileCard.age'}
             />
 
             <Input
@@ -100,6 +102,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 label={t('city')}
                 readonly={readonly}
                 onChange={onChangeCity}
+                data-testid={'ProfileCard.city'}
             />
 
             <CountrySelect
@@ -122,6 +125,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 label={t('username')}
                 readonly={readonly}
                 onChange={onChangeUsername}
+                data-testid={'ProfileCard.username'}
             />
 
             <Input
@@ -130,6 +134,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 label={t('avatar')}
                 readonly={readonly}
                 onChange={onChangeAvatar}
+                data-testid={'ProfileCard.avatar'}
             />
         </VStack>
     );

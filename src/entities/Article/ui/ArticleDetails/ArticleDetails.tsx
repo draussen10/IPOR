@@ -22,6 +22,7 @@ import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArtic
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
+import {VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
     className?: string
@@ -66,7 +67,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     }, []);
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap="8" max className={classNames('', {}, [className])}>
             {isLoading && (
                 <>
                     <Skeleton className={styles.avatar} width={200} height={200} borderRadius={'50%'} />
@@ -87,7 +88,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
             {data && (
                 <>
-                    <div className={styles.avatarWrapper} >
+                    <div className={styles.avatar} >
                         <Avatar src={data.img} size={200} />
                     </div>
 
@@ -110,6 +111,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
                     {data.blocks.map(renderBlock)}
                 </>
             )}
-        </div>
+        </VStack>
     );
 });

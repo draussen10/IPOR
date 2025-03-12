@@ -10,6 +10,7 @@ import {articleDetailsPageReducer} from '../../model/slice';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import {ArticleRecommendationList} from 'features/articleRecommendationList';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
+import {VStack} from 'shared/ui/Stack';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer
@@ -36,10 +37,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     return (
         <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
-            <ArticleDetailsPageHeader />
-            <ArticleDetails id={id} />
-            <ArticleRecommendationList />
-            <ArticleDetailsComments id={id} />
+            <VStack gap="8" max>
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                <ArticleRecommendationList />
+                <ArticleDetailsComments id={id} />
+            </VStack>
         </Page>
     );
 };

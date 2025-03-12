@@ -44,7 +44,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
             onScrollEnd={onLoadNextPart}
             className={classNames(styles.articlesPage, {}, [className])}
         >
-            <VStack gap="8" max>
+            <VStack gap="32" max>
                 <ArticlePageFilters/>
                 <ArticleInfiniteList />
             </VStack>

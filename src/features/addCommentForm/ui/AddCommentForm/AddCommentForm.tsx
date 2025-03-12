@@ -11,6 +11,7 @@ import {
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/addCommentFormSlice';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
+import {HStack} from 'shared/ui/Stack';
 
 interface AddCommentFormProps {
     className?: string
@@ -39,7 +40,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
     }, [onCommentTextChange, onSendComment, text]);
 
     return (
-        <div className={classNames(styles.addCommentForm, {}, [className])}>
+        <HStack max className={classNames(styles.addCommentForm, {}, [className])}>
             <Input
                 className={styles.input}
                 placeholder={t('addCommentFormPlaceholder')}
@@ -49,7 +50,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
             <Button onClick={onSendHandler}>
                 {t('send')}
             </Button>
-        </div>
+        </HStack>
     );
 });
 

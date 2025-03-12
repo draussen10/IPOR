@@ -15,6 +15,7 @@ import {addCommentForArticle} from '../../model/services/addCommentForArticle/ad
 import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsCommentsProps {
     id: string
@@ -44,7 +45,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
     }, [dispatch, id]);
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack gap="8" max className={classNames('', {}, [className])}>
             <Text size={TextSize.L} title={t('commentTitle')} />
             <AddCommentForm onSendComment={onSendComment}/>
             <CommentList
@@ -52,6 +53,6 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
                 isLoading={isLoadingComments}
                 error={errorComments}
             />
-        </div>
+        </VStack>
     );
 });

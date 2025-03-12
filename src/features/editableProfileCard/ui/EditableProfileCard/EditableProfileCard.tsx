@@ -1,5 +1,5 @@
 import {useTranslation} from 'react-i18next';
-import {memo, useCallback, useEffect} from 'react';
+import {memo, useCallback} from 'react';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {useSelector} from 'react-redux';
 import {ProfileCard} from 'entities/Profile';
@@ -16,6 +16,8 @@ import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfi
 import {profileActions, profileReducer} from '../../model/slice/profileSlice';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
 import {EditableProfileCardHeader} from '../EditableProfileCardHeader/EditableProfileCardHeader';
+import {VStack} from 'shared/ui/Stack';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface EditableProfileCardProps {
     className?: string
@@ -47,11 +49,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
     useReducerManager(reducers, true);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchProfileData(id));
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateForm({firstname: value || ''}));
@@ -86,10 +86,15 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     }, [dispatch]);
 
     return (
-        <>
+        <VStack gap="8" max>
             <EditableProfileCardHeader readonly={readonly} />
             {validateErrors?.length && validateErrors?.map(err => (
-                <Text key={err} theme={TextTheme.ERROR} text={validateErrorTranslates[err]} />
+                <Text
+                    key={err}
+                    theme={TextTheme.ERROR}
+                    text={validateErrorTranslates[err]}
+                    data-testid={'EditableProfileCard.Error'}
+                />
             ))}
             <ProfileCard
                 data={formData}
@@ -105,6 +110,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 onChangeCurrency={onChangeCurrency}
                 onChangeCountry={onChangeCountry}
             />
-        </>
+        </VStack>
     );
 });

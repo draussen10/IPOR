@@ -6,6 +6,7 @@ import {type Comment} from '../../model/types/comment';
 import {Text, TextAlign} from 'shared/ui/Text/Text';
 import {CommentCard} from '../CommentCard/CommentCard';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {VStack} from 'shared/ui/Stack';
 
 interface CommentListProps {
     className?: string
@@ -26,12 +27,12 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.commentList, {}, [className])}>
+            <VStack gap="8" max className={classNames(styles.commentList, {}, [className])}>
                 <Skeleton height={85} width={'100%'} className={styles.comment} />
                 <Skeleton height={85} width={'100%'} className={styles.comment} />
                 <Skeleton height={85} width={'100%'} className={styles.comment} />
                 <Skeleton height={85} width={'100%'} className={styles.comment} />
-            </div>
+            </VStack>
         );
     }
 
@@ -47,7 +48,7 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
     }
 
     return (
-        <div className={classNames(styles.commentList, {}, [className])}>
+        <VStack gap="8" max className={classNames(styles.commentList, {}, [className])}>
             {comments?.length
                 ? comments.map(comment => (
                     <CommentCard
@@ -59,6 +60,6 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
                 : (
                     <Text text={t('noComments')} />
                 )}
-        </div>
+        </VStack>
     );
 });
