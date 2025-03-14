@@ -7,6 +7,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin'
 
 export function buildPlugins ({paths, isDev, analyze, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
     const plugins = [
@@ -37,6 +38,10 @@ export function buildPlugins ({paths, isDev, analyze, apiUrl, project}: BuildOpt
 
     if (analyze) {
         plugins.push(new BundleAnalyzerPlugin());
+        plugins.push(new CircularDependencyPlugin({
+            exclude: /node_modules/,
+            failOnError: true
+        }))
     }
 
     return plugins;
