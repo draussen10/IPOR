@@ -14,9 +14,8 @@
     // Позволяет не писать везде * as ...
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {
-      "*": ["./src/*"]
-    }
+    "paths": {"*": ["./src/*"]},
+    "isolatedModules": true
   },
   // Т.к. "module": "ESNext" нужно добавить настройки для компиляции (поддерживается только CommonJS)
   "ts-node": {
