@@ -1,4 +1,4 @@
-import {type FC, memo, useCallback, useEffect} from 'react';
+import {type FC, memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './ArticlesPage.m.scss';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
@@ -11,6 +11,7 @@ import {ArticlePageFilters} from '../ArticlePageFilters/ArticlePageFilters';
 import {useSearchParams} from 'react-router-dom';
 import {ArticleInfiniteList} from '../ArticleInfiniteList/ArticleInfiniteList';
 import {VStack} from 'shared/ui/Stack';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface ArticlesPageProps {
     className?: string
@@ -33,11 +34,9 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
     useReducerManager(reducers, false);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(initArticlesPage(searchParams));
-        }
-    }, [dispatch, searchParams]);
+    useInitialEffect(() => {
+        dispatch(initArticlesPage(searchParams));
+    });
 
     return (
         <Page

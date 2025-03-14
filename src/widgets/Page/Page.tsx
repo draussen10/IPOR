@@ -1,4 +1,4 @@
-import {type FC, type MutableRefObject, useRef, type UIEvent, useEffect} from 'react';
+import {type FC, type MutableRefObject, useRef, type UIEvent, type ReactNode} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './Page.m.scss';
 import {useInfiniteScroll} from 'shared/lib/hooks/useInfiniteScroll';
@@ -8,10 +8,12 @@ import {useLocation} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {type StateSchema} from 'app/providers/StoreProvider';
 import {useThrottle} from 'shared/lib/hooks/useThrottle';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface PageProps {
     className?: string
     onScrollEnd?: () => void
+    children: ReactNode
 }
 
 export const Page: FC<PageProps> = (props) => {
@@ -34,11 +36,9 @@ export const Page: FC<PageProps> = (props) => {
         callback: onScrollEnd
     });
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            wrapperRef.current.scrollTop = scrollPosition;
-        }
-    }, [scrollPosition]);
+    useInitialEffect(() => {
+        wrapperRef.current.scrollTop = scrollPosition;
+    });
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
         dispatch(UIActions.setScrollPosition({

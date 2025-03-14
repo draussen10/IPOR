@@ -1,4 +1,4 @@
-import {type FC, memo, useCallback, useEffect} from 'react';
+import {type FC, memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetails.m.scss';
@@ -23,10 +23,11 @@ import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import {VStack} from 'shared/ui/Stack';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 const reducers: ReducerList = {
@@ -47,11 +48,9 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
     useReducerManager(reducers, true);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id));
+    });
 
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {

@@ -17,6 +17,8 @@ interface ArticleInfiniteListProps {
 export const ArticleInfiniteList: FC<ArticleInfiniteListProps> = memo((props) => {
     const {t} = useTranslation('pages/articles');
     const articles = useSelector(getArticles.selectAll);
+    const articles1 = useSelector(getArticles.selectEntities);
+    console.log(articles1);
     const isLoading = useSelector(getArticlePageIsLoading);
     const view = useSelector(getArticlePageView);
     const error = useSelector(getArticlePageError);

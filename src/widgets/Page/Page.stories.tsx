@@ -6,7 +6,7 @@ import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecora
 
 const meta: Meta<typeof Page> = {
     component: Page,
-    title: 'widgets/Page'
+    title: 'widget/Page'
 };
 
 export default meta;

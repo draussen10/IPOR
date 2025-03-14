@@ -6,7 +6,7 @@ import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecora
 
 const meta: Meta<typeof ArticleDetailsComments> = {
     component: ArticleDetailsComments,
-    title: '.../ArticleDetailsComments'
+    title: 'pages/ArticleDetails/Comments'
 };
 
 export default meta;

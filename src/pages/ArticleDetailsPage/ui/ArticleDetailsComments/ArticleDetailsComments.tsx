@@ -1,4 +1,4 @@
-import {type FC, memo, useCallback, useEffect} from 'react';
+import {type FC, memo, useCallback} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
@@ -16,9 +16,10 @@ import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {VStack} from 'shared/ui/Stack';
+import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {
-    id: string
+    id?: string
     className?: string
 }
 
@@ -38,11 +39,9 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchCommentsByArticleId(id));
-        }
-    }, [dispatch, id]);
+    useInitialEffect(() => {
+        dispatch(fetchCommentsByArticleId(id));
+    });
 
     return (
         <VStack gap="8" max className={classNames('', {}, [className])}>

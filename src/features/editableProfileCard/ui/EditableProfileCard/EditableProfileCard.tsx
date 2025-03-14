@@ -21,7 +21,7 @@ import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
 
 interface EditableProfileCardProps {
     className?: string
-    id: string
+    id?: string
 }
 
 const reducers: ReducerList = {

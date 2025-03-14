@@ -1,12 +1,13 @@
 import {classNames, type Mods} from 'shared/lib/classNames/classNames';
 import styles from './Modal.m.scss';
-import React, {type ComponentProps, type FC, useCallback, useEffect, useRef, useState} from 'react';
+import React, {type ComponentProps, type FC, type ReactNode, useCallback, useEffect, useRef, useState} from 'react';
 import {Portal} from '../Portal/Portal';
 
 interface ModalProps extends ComponentProps<FC> {
     className?: string
     isOpen: boolean
     onClose: () => void
+    children: ReactNode
     lazy?: boolean
 }
 

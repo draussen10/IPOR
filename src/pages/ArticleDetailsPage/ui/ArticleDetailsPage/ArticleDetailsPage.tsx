@@ -1,6 +1,5 @@
 import {type FC, memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetailsPage.m.scss';
 import {ArticleDetails} from 'entities/Article';
 import {useParams} from 'react-router-dom';
@@ -21,19 +20,10 @@ interface ArticleDetailsPageProps {
 }
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
-    const {t} = useTranslation('pages/article');
     const {id} = useParams<{ id: string }>();
     const {className} = props;
 
     useReducerManager(reducers, true);
-
-    if (!id) {
-        return (
-            <div className={classNames(styles.articleDetailsPage, {}, [className])}>
-                {t('articleNotFound')}
-            </div>
-        );
-    }
 
     return (
         <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
