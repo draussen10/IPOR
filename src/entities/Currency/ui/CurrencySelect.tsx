@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {Currency} from '../model/types/currency';
 import styles from 'entities/Profile/ui/ProfileCard/ProfileCard.m.scss';
-import {Select} from 'shared/ui/Select/Select';
+import {ListBox} from 'shared/ui/ListBox/ListBox';
 
 const currencyList = (Object.keys(Currency) as Array<keyof typeof Currency>).map((key) => ({
     value: Currency[key],
@@ -31,12 +31,24 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
         onChange?.(value as Currency);
     }, [onChange]);
 
+    // return (
+    //     <Select
+    //         className={classNames(styles.currencySelect, {}, [className])}
+    //         value={value}
+    //         options={currencyList}
+    //         label={t('currency')}
+    //         readonly={readonly}
+    //         onChange={onChangeHandler}
+    //     />
+    // );
+
     return (
-        <Select
+        <ListBox
+            label={t('currency')}
             className={classNames(styles.currencySelect, {}, [className])}
             value={value}
-            options={currencyList}
-            label={t('currency')}
+            defaultValue={'Выберите валюту'}
+            items={currencyList}
             readonly={readonly}
             onChange={onChangeHandler}
         />

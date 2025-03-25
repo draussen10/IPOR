@@ -30,7 +30,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off',
         'i18next/no-literal-string': ['warn', {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'justify', 'align', 'direction', 'gap']
+                ignoreAttribute: ['data-testid', 'to', 'justify', 'align', 'direction', 'gap', 'as']
         }],
         '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/no-unsafe-argument': 'warn',

@@ -1,0 +1,42 @@
+.listBox {
+  position: relative;
+  width: min-content;
+}
+
+.trigger {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.options {
+  min-width: 100%;
+  background-color: var(--listbox-bg);
+  position: absolute;
+  z-index: 10000;
+  box-shadow: 4px 4px 8px var(--listbox-bg);
+}
+
+.option {
+  padding: 10px 15px;
+}
+
+.selected {
+  background-color: var(--primary-color);
+  color: var(--invert-primary-color);
+}
+
+.active {
+  background-color: var(--invert-primary-color);
+  color: inherit;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.top {
+  bottom: 100%;
+}
