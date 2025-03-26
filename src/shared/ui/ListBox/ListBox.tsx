@@ -5,14 +5,13 @@ import {Listbox as HListbox} from '@headlessui/react';
 import {Button} from '../Button/Button';
 import {Text} from '../Text/Text';
 import {HStack} from '../Stack';
+import {type DropdownDirection} from 'shared/types/ui';
 
 export interface ListBoxItem {
     title: string
     value: string
     disabled?: boolean
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
     label?: string
@@ -26,8 +25,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: styles.bottom,
-    top: styles.top
+    'bottom left': styles.bottomLeft,
+    'top left': styles.topLeft,
+    'bottom right': styles.bottomRight,
+    'top right': styles.topRight
 };
 
 export const ListBox: FC<ListBoxProps> = memo((props) => {
@@ -38,7 +39,7 @@ export const ListBox: FC<ListBoxProps> = memo((props) => {
         defaultValue,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottom right',
         label
     } = props;
 

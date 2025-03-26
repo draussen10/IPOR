@@ -1,8 +1,5 @@
 import {ListBox} from './ListBox';
 import {type Meta, type StoryObj} from '@storybook/react';
-import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from 'app/providers/ThemeProvider';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof ListBox> = {
     component: ListBox,
@@ -13,34 +10,51 @@ const meta: Meta<typeof ListBox> = {
         onChange: (value: string) => {},
         items: [
             {
-                title: '1',
+                title: 'first',
                 value: '1',
                 disabled: true
             },
             {
-                title: '2',
+                title: 'second',
                 value: '2'
             },
             {
-                title: '3',
+                title: 'third',
                 value: '3'
             },
             {
-                title: '4',
+                title: 'fourth',
                 value: '4'
             }
         ]
-    }
+    },
+    decorators: [(Story) => <div style={{padding: 100}}><Story /></div>]
 };
 
 export default meta;
 
 type Story = StoryObj<typeof ListBox>;
 
-export const Light: Story = {
-    decorators: [StoreDecorator({})]
+export const topLeft: Story = {
+    args: {
+        direction: 'top left'
+    }
 };
 
-export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+export const topRight: Story = {
+    args: {
+        direction: 'top right'
+    }
+};
+
+export const bottomLeft: Story = {
+    args: {
+        direction: 'bottom left'
+    }
+};
+
+export const bottomRight: Story = {
+    args: {
+        direction: 'bottom right'
+    }
 };
