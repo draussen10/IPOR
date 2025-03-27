@@ -1,17 +1,5 @@
-.dropdown {
-  position: relative;
-}
-
-.btn {
-  background: none;
-  outline: none;
-  border: none;
-  margin: 0;
-  padding: 0;
-}
-
 .items {
-  background: var(--listbox-bg);
+  background: var(--popup-bg);
   position: absolute;
   z-index: 10000;
   border-radius: 8px;
@@ -32,22 +20,4 @@
 
 .active {
   background: var(--invert-primary-color);
-}
-
-.topLeft {
-  bottom: 100%;
-  right: 0;
-}
-
-.topRight {
-  bottom: 100%;
-  left: 0;
-}
-
-.bottomLeft {
-  right: 0;
-}
-
-.bottomRight {
-  left: 0;
 }

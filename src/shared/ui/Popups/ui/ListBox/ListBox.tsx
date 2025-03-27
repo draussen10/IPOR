@@ -2,10 +2,12 @@ import {type FC, Fragment, memo} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './ListBox.m.scss';
 import {Listbox as HListbox} from '@headlessui/react';
-import {Button} from '../Button/Button';
-import {Text} from '../Text/Text';
-import {HStack} from '../Stack';
+import {Button} from '../../../Button/Button';
+import {Text} from '../../../Text/Text';
+import {HStack} from '../../../Stack';
 import {type DropdownDirection} from 'shared/types/ui';
+import {mapDirectionClass} from '../../styles/const';
+import popupStyles from '../../styles/popup.m.scss';
 
 export interface ListBoxItem {
     title: string
@@ -24,13 +26,6 @@ interface ListBoxProps {
     direction?: DropdownDirection
 }
 
-const mapDirectionClass: Record<DropdownDirection, string> = {
-    'bottom left': styles.bottomLeft,
-    'top left': styles.topLeft,
-    'bottom right': styles.bottomRight,
-    'top right': styles.topRight
-};
-
 export const ListBox: FC<ListBoxProps> = memo((props) => {
     const {
         className,
@@ -44,7 +39,7 @@ export const ListBox: FC<ListBoxProps> = memo((props) => {
     } = props;
 
     return (
-        <HStack gap={'8'} align={'center'} className={classNames('', {}, [className])}>
+        <HStack gap={'8'} align={'center'} className={classNames('', {}, [className, popupStyles.popup])}>
             {label && <Text text={label} />}
             <HListbox as={'div'}
                 disabled={readonly}
@@ -53,7 +48,7 @@ export const ListBox: FC<ListBoxProps> = memo((props) => {
                 onChange={onChange}
             >
 
-                <HListbox.Button className={styles.trigger}>
+                <HListbox.Button className={popupStyles.trigger}>
                     <Button
                         disabled={readonly}
                     >

@@ -1,16 +1,17 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import styles from './Navbar.m.scss';
 import {useTranslation} from 'react-i18next';
-import {memo, useCallback, useState} from 'react';
+import {memo, useState} from 'react';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
-import {useDispatch, useSelector} from 'react-redux';
-import {getUserAuthData, userActions} from 'entities/User';
+import {useSelector} from 'react-redux';
+import {getUserAuthData} from 'entities/User';
 import {AppLink} from 'shared/ui/AppLink/AppLink';
 import {Text, TextTheme} from 'shared/ui/Text/Text';
 import {RoutePath} from 'shared/config/routeConfig/routeConfig';
-import {Dropdown} from 'shared/ui/Dropdown/Dropdown';
-import {Avatar} from 'shared/ui/Avatar/Avatar';
+import {HStack} from 'shared/ui/Stack';
+import {NotificationButton} from 'features/notidicationButton/ui/NotificationButton/NotificationButton';
+import {AvatarDropdown} from 'features/avatarDropdown/ui/AvatarDropdown/AvatarDropdown';
 
 interface NavbarProps {
     className?: string
@@ -18,15 +19,9 @@ interface NavbarProps {
 
 export const Navbar = memo(({className}: NavbarProps) => {
     const {t} = useTranslation();
-    const dispatch = useDispatch();
 
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
-
-    const onLogout = useCallback(() => {
-        dispatch(userActions.logout());
-        setIsAuthModal(false);
-    }, [dispatch]);
 
     if (authData) {
         return (
@@ -35,21 +30,10 @@ export const Navbar = memo(({className}: NavbarProps) => {
                 <AppLink to={RoutePath.article_create} className={styles.createLink}>
                     {t('createArticle')}
                 </AppLink>
-                <Dropdown
-                    items={[
-                        {
-                            title: t('Профиль пользователя'),
-                            href: RoutePath.profiles + authData.id
-                        },
-                        {
-                            title: t('signOut'),
-                            onClick: onLogout
-                        }
-                    ]}
-                    trigger={<Avatar size={30} src={authData.avatar ?? ''}/>}
-                    className={styles.dropdown}
-                    direction={'bottom left'}
-                />
+                <HStack gap={'16'} className={styles.actions} >
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
             </header>
         );
     }
