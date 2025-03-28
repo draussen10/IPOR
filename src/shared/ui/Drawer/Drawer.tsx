@@ -1,34 +1,30 @@
+import {type FC, memo, type ReactNode} from 'react';
 import {classNames, type Mods} from 'shared/lib/classNames/classNames';
-import styles from './Modal.m.scss';
-import React, {type ComponentProps, type FC, type ReactNode} from 'react';
+import styles from './Drawer.m.scss';
+import {useTheme} from 'app/providers/ThemeProvider';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';
 import {useModal} from 'shared/lib/hooks/useModal';
-import {useTheme} from 'app/providers/ThemeProvider';
 
-interface ModalProps extends ComponentProps<FC> {
+interface DrawerProps {
     className?: string
-    isOpen: boolean
-    onClose: () => void
     children: ReactNode
+    isOpen?: boolean
+    onClose?: () => void
     lazy?: boolean
 }
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Drawer: FC<DrawerProps> = memo((props) => {
     const {
-        children,
         className,
-        onClose,
+        children,
         isOpen,
+        onClose,
         lazy
     } = props;
 
     const {theme} = useTheme();
     const {isMounted, isClosing, closeHandler} = useModal({isOpen, onClose});
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const mods: Mods = {
         [styles.opened]: isOpen,
@@ -41,12 +37,14 @@ export const Modal: FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={classNames(styles.modal, mods, [className, theme, 'app_modal'])}>
-                <Overlay onClick={closeHandler}/>
-                <div className={styles.content} onClick={onContentClick}>
+            <div className={classNames(styles.drawer, mods, [className, theme, 'app_drawer'])}>
+                <Overlay onClick={closeHandler} />
+                <div
+                    className={styles.content}
+                >
                     {children}
                 </div>
             </div>
         </Portal>
     );
-};
+});
