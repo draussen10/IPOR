@@ -31,6 +31,10 @@ export default ({config}: { config: webpack.Configuration }) => {
     ];
     config.resolve!.extensions!.push('.tsx', '.ts', '.js');
 
+    config.resolve!.alias = {
+        '@': paths.src
+    }
+
     const rules = config.module!.rules as RuleSetRule[];
 
     config.module!.rules = rules.map((rule) => {

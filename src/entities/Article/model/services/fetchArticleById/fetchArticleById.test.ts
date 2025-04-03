@@ -1,7 +1,7 @@
 import {fetchArticleById} from './fetchArticleById';
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import {type Article, ArticleBlockType, ArticleType} from '../../types/article';
-import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
+import ProfileIcon from '@/shared/assets/test/storybook_profile.jpg';
 
 const data: Article = {
     id: '1',

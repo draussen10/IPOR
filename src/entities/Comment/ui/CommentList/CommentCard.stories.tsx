@@ -1,6 +1,6 @@
 import {CommentList} from './CommentList';
 import {type Meta, type StoryObj} from '@storybook/react';
-import AvatarImg from 'shared/assets/test/storybook_profile.jpg';
+import AvatarImg from '@/shared/assets/test/storybook_profile.jpg';
 
 const meta: Meta<typeof CommentList> = {
     component: CommentList,

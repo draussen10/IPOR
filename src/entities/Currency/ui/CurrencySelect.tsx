@@ -1,9 +1,9 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {Currency} from '../model/types/currency';
-import styles from 'entities/Profile/ui/ProfileCard/ProfileCard.m.scss';
-import {ListBox} from 'shared/ui/Popups';
+import styles from '@/entities/Profile/ui/ProfileCard/ProfileCard.m.scss';
+import {ListBox} from '@/shared/ui/Popups';
 
 const currencyList = (Object.keys(Currency) as Array<keyof typeof Currency>).map((key) => ({
     value: Currency[key],

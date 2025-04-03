@@ -1,10 +1,10 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
-import {Text, TextSize} from 'shared/ui/Text/Text';
-import {AddCommentForm} from 'features/addCommentForm';
-import {CommentList} from 'entities/Comment';
+import {Text, TextSize} from '@/shared/ui/Text/Text';
+import {AddCommentForm} from '@/features/addCommentForm';
+import {CommentList} from '@/entities/Comment';
 import {useSelector} from 'react-redux';
 import {
     getArticleDetailsCommentsError,
@@ -15,8 +15,8 @@ import {addCommentForArticle} from '../../model/services/addCommentForArticle/ad
 import {
     fetchCommentsByArticleId
 } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import {VStack} from 'shared/ui/Stack';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
+import {VStack} from '@/shared/ui/Stack';
+import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {
     id?: string

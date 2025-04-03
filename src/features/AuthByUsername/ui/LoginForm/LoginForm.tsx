@@ -1,9 +1,9 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './LoginForm.m.scss';
-import {Button} from 'shared/ui/Button/Button';
-import {Text, TextTheme} from 'shared/ui/Text/Text';
-import {Input} from 'shared/ui/Input/Input';
+import {Button} from '@/shared/ui/Button/Button';
+import {Text, TextTheme} from '@/shared/ui/Text/Text';
+import {Input} from '@/shared/ui/Input/Input';
 import {useSelector} from 'react-redux';
 import {memo, useCallback} from 'react';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
@@ -12,8 +12,8 @@ import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginU
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
-import {useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 
 interface LoginFormProps {
     className?: string

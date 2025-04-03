@@ -1,5 +1,5 @@
 import {type FC, memo} from 'react';
-import {ArticleList} from 'entities/Article';
+import {ArticleList} from '@/entities/Article';
 import {useSelector} from 'react-redux';
 import {getArticles} from '../../model/slice/articlesPageSlice';
 import {
@@ -7,7 +7,7 @@ import {
     getArticlePageIsLoading,
     getArticlePageView
 } from '../../model/selectors/articlesPageSelector';
-import {Text, TextAlign} from 'shared/ui/Text/Text';
+import {Text, TextAlign} from '@/shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
 
 interface ArticleInfiniteListProps {

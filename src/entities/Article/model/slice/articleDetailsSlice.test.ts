@@ -2,7 +2,7 @@ import {type ArticleDetailsSchema} from '../types/articleDetailsSchema';
 import {articleDetailsReducer} from './articleDetailsSlice';
 import {fetchArticleById} from '../services/fetchArticleById/fetchArticleById';
 import {type Article, ArticleBlockType, ArticleType} from '../types/article';
-import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
+import ProfileIcon from '@/shared/assets/test/storybook_profile.jpg';
 
 const data: Article = {
     id: '1',

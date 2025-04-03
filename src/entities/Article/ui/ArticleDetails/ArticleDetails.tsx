@@ -1,13 +1,13 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetails.m.scss';
-import {Text, TextAlign, TextSize} from 'shared/ui/Text/Text';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
-import {Avatar} from 'shared/ui/Avatar/Avatar';
-import EyeIcon from 'shared/assets/icons/eye-20-20.svg';
-import CalendarIcon from 'shared/assets/icons/calendar-20-20.svg';
-import {Icon} from 'shared/ui/Icon/Icon';
+import {Text, TextAlign, TextSize} from '@/shared/ui/Text/Text';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {Avatar} from '@/shared/ui/Avatar/Avatar';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
+import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
+import {Icon} from '@/shared/ui/Icon/Icon';
 import {type ArticleBlock, ArticleBlockType} from '../../model/types/article';
 import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent';
 import {ArticleBlockCodeComponent} from '../ArticleBlockCodeComponent/ArticleBlockCodeComponent';
@@ -19,11 +19,11 @@ import {
     getArticleDetailsIsLoading
 } from '../../model/selectrors/getArticleDetails';
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
-import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
+import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
-import {VStack} from 'shared/ui/Stack';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
+import {VStack} from '@/shared/ui/Stack';
+import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string

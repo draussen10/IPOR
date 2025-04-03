@@ -1,5 +1,5 @@
 import {type FC, type InputHTMLAttributes, memo, type ReactNode, useEffect, useRef} from 'react';
-import {classNames, type Mods} from 'shared/lib/classNames/classNames';
+import {classNames, type Mods} from '@/shared/lib/classNames/classNames';
 import styles from './Input.m.scss';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'> {

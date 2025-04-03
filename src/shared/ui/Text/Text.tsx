@@ -1,5 +1,5 @@
 import {type FC, memo} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Text.m.scss';
 
 export enum TextTheme {

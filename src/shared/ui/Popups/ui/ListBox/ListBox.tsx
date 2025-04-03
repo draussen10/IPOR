@@ -1,11 +1,11 @@
 import {type FC, Fragment, memo} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './ListBox.m.scss';
 import {Listbox as HListbox} from '@headlessui/react';
 import {Button} from '../../../Button/Button';
 import {Text} from '../../../Text/Text';
 import {HStack} from '../../../Stack';
-import {type DropdownDirection} from 'shared/types/ui';
+import {type DropdownDirection} from '@/shared/types/ui';
 import {mapDirectionClass} from '../../styles/const';
 import popupStyles from '../../styles/popup.m.scss';
 

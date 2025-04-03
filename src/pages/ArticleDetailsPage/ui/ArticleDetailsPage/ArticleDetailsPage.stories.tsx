@@ -1,10 +1,10 @@
 import ArticleDetailsPage from './ArticleDetailsPage';
 import {type Meta, type StoryObj} from '@storybook/react';
-import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from 'app/providers/ThemeProvider';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {type Article, ArticleBlockType, ArticleType} from 'entities/Article';
-import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
+import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import {Theme} from '@/app/providers/ThemeProvider';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import {type Article, ArticleBlockType, ArticleType} from '@/entities/Article';
+import ProfileIcon from '@/shared/assets/test/storybook_profile.jpg';
 
 const article: Article = {
     id: '1',

@@ -1,6 +1,6 @@
 import {Flex} from './Flex';
 import {type Meta, type StoryObj} from '@storybook/react';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 const meta: Meta<typeof Flex> = {
     component: Flex,

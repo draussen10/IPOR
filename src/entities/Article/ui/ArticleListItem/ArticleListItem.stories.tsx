@@ -1,8 +1,8 @@
 import {ArticleListItem} from './ArticleListItem';
 import {type Meta, type StoryObj} from '@storybook/react';
 import {type Article, ArticleView} from '../../model/types/article';
-import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ProfileImg from 'shared/assets/test/storybook_profile.jpg';
+import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import ProfileImg from '@/shared/assets/test/storybook_profile.jpg';
 
 const meta: Meta<typeof ArticleListItem> = {
     component: ArticleListItem,

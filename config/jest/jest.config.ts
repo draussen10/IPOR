@@ -92,7 +92,8 @@ export default {
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.(jpg|svg)$': '<rootDir>config/jest/JestEmptyComponent.tsx'
+        '\\.(jpg|svg)$': '<rootDir>config/jest/JestEmptyComponent.tsx',
+        '^@/(.*)$': '<rootDir>src/$1',
     },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -128,7 +129,7 @@ export default {
     // resetModules: false,
 
     // A path to a custom resolver
-    // resolver: undefined,
+    // resolver: undefined
 
     // Automatically restore mock state and implementation before every test
     // restoreMocks: false,

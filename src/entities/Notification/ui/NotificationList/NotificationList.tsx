@@ -1,9 +1,9 @@
 import {type FC, memo} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useNotifications} from '../../api/notificationApi';
-import {VStack} from 'shared/ui/Stack';
+import {VStack} from '@/shared/ui/Stack';
 import {NotificationItem} from '../NotificationItem/NotificationItem';
-import {Loader} from 'shared/ui/Loader/Loader';
+import {Loader} from '@/shared/ui/Loader/Loader';
 
 interface NotificationListProps {
     className?: string

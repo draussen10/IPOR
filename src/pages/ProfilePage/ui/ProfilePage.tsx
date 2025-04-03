@@ -1,8 +1,8 @@
 import {type FC} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {Page} from 'widgets/Page/Page';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {Page} from '@/widgets/Page/Page';
 import styles from './ProfilePage.m.scss';
-import {EditableProfileCard} from 'features/editableProfileCard';
+import {EditableProfileCard} from '@/features/editableProfileCard';
 import {useParams} from 'react-router-dom';
 
 interface ProfilePageProps {

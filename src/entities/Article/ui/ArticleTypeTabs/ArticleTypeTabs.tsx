@@ -1,9 +1,9 @@
 import {type FC, memo, useCallback, useMemo} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
-import {type TabItem, Tabs} from 'shared/ui/Tabs/Tabs';
-import {articlesPageActions, fetchArticlesList, getArticlesPageType} from 'pages/ArticlesPage';
+import {type TabItem, Tabs} from '@/shared/ui/Tabs/Tabs';
+import {articlesPageActions, fetchArticlesList, getArticlesPageType} from '@/pages/ArticlesPage';
 import {ArticleType} from '../../model/types/article';
 import {useSelector} from 'react-redux';
 

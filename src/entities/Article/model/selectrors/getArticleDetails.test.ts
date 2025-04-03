@@ -1,7 +1,7 @@
 import {getArticleDetailsIsLoading, getArticleDetailsData, getArticleDetailsError} from './getArticleDetails';
-import {type StateSchema} from 'app/providers/StoreProvider';
+import {type StateSchema} from '@/app/providers/StoreProvider';
 import {type Article, ArticleBlockType, ArticleType} from '../types/article';
-import ProfileIcon from 'shared/assets/test/storybook_profile.jpg';
+import ProfileIcon from '@/shared/assets/test/storybook_profile.jpg';
 
 const article: Article = {
     id: '1',

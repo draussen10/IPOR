@@ -1,17 +1,17 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './ArticlesPage.m.scss';
-import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
+import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {articlesPageReducer} from '../../model/slice/articlesPageSlice';
-import {useAppDispatch} from 'shared/lib/hooks/useAppDispatch';
-import {Page} from 'widgets/Page/Page';
+import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
+import {Page} from '@/widgets/Page/Page';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {ArticlePageFilters} from '../ArticlePageFilters/ArticlePageFilters';
 import {useSearchParams} from 'react-router-dom';
 import {ArticleInfiniteList} from '../ArticleInfiniteList/ArticleInfiniteList';
-import {VStack} from 'shared/ui/Stack';
-import {useInitialEffect} from 'shared/lib/hooks/useInitialEffect';
+import {VStack} from '@/shared/ui/Stack';
+import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
 
 interface ArticlesPageProps {
     className?: string

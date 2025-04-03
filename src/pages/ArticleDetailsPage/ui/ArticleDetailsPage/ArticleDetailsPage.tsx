@@ -1,15 +1,15 @@
 import {type FC, memo} from 'react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './ArticleDetailsPage.m.scss';
-import {ArticleDetails} from 'entities/Article';
+import {ArticleDetails} from '@/entities/Article';
 import {useParams} from 'react-router-dom';
-import {type ReducerList, useReducerManager} from 'app/providers/StoreProvider/lib/useReducerManager';
-import {Page} from 'widgets/Page/Page';
+import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {Page} from '@/widgets/Page/Page';
 import {articleDetailsPageReducer} from '../../model/slice';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
-import {ArticleRecommendationList} from 'features/articleRecommendationList';
+import {ArticleRecommendationList} from '@/features/articleRecommendationList';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
-import {VStack} from 'shared/ui/Stack';
+import {VStack} from '@/shared/ui/Stack';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer
