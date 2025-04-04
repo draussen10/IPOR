@@ -1,5 +1,5 @@
 import {type FC, memo, useState} from 'react';
-import styles from './NotificationButton.m.scss';
+import styles from './NotificationButton.module.scss';
 import {Button, ButtonTheme} from '@/shared/ui/Button/Button';
 import {Icon} from '@/shared/ui/Icon/Icon';
 import NotificationIcon from '@/shared/assets/icons/notification-20-20.svg';

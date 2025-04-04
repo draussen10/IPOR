@@ -1,6 +1,6 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from './LoginForm.m.scss';
+import styles from './LoginForm.module.scss';
 import {Button} from '@/shared/ui/Button/Button';
 import {Text, TextTheme} from '@/shared/ui/Text/Text';
 import {Input} from '@/shared/ui/Input/Input';

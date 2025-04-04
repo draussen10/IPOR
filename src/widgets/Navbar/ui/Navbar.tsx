@@ -1,5 +1,5 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Navbar.m.scss';
+import styles from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
 import {memo, useState} from 'react';
 import {Button, ButtonTheme} from '@/shared/ui/Button/Button';

@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './ArticleBlockCodeComponent.m.scss';
+import styles from './ArticleBlockCodeComponent.module.scss';
 import {type ArticleCodeBlock} from '../../model/types/article';
 import {Code} from '@/shared/ui/Code/Code';
 

@@ -2,7 +2,7 @@ import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
-import styles from './ArticlePageFilters.m.scss';
+import styles from './ArticlePageFilters.module.scss';
 import {useSelector} from 'react-redux';
 import {
     getArticlePageView,

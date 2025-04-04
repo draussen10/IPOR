@@ -1,6 +1,6 @@
 import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './ArticlesPage.m.scss';
+import styles from './ArticlesPage.module.scss';
 import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {articlesPageReducer} from '../../model/slice/articlesPageSlice';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';

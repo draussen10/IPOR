@@ -1,7 +1,7 @@
 import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from '@/entities/Profile/ui/ProfileCard/ProfileCard.m.scss';
+import styles from '@/entities/Profile/ui/ProfileCard/ProfileCard.module.scss';
 import {Select} from '@/shared/ui/Select/Select';
 import {Country} from '../model/types/country';
 

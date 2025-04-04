@@ -1,5 +1,5 @@
 import {classNames, type Mods} from '@/shared/lib/classNames/classNames';
-import styles from './Modal.m.scss';
+import styles from './Modal.module.scss';
 import React, {type ComponentProps, type FC, type ReactNode} from 'react';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';

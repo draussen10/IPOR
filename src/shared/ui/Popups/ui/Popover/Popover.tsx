@@ -1,8 +1,8 @@
 import {type FC, memo, type ReactNode} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Popover as HPopover} from '@headlessui/react';
-import popupStyles from '../../styles/popup.m.scss';
-import styles from './Popover.m.scss';
+import popupStyles from '../../styles/popup.module.scss';
+import styles from './Popover.module.scss';
 import {type DropdownDirection} from '@/shared/types/ui';
 import {mapDirectionClass} from '../../styles/const';
 

@@ -1,6 +1,6 @@
 import {type FC, type MutableRefObject, useRef, type UIEvent, type ReactNode} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Page.m.scss';
+import styles from './Page.module.scss';
 import {useInfiniteScroll} from '@/shared/lib/hooks/useInfiniteScroll';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {getUIScrollByPath, UIActions} from '@/features/UI';

@@ -1,5 +1,5 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Button.m.scss';
+import styles from './Button.module.scss';
 import {type ButtonHTMLAttributes, type FC, memo} from 'react';
 
 export enum ButtonSize {

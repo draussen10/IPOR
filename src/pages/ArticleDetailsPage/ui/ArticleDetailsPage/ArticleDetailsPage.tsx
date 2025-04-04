@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './ArticleDetailsPage.m.scss';
+import styles from './ArticleDetailsPage.module.scss';
 import {ArticleDetails} from '@/entities/Article';
 import {useParams} from 'react-router-dom';
 import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';

@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Text.m.scss';
+import styles from './Text.module.scss';
 
 export enum TextTheme {
     DEFAULT = 'default',

@@ -1,7 +1,7 @@
 import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from './ArticleDetails.m.scss';
+import styles from './ArticleDetails.module.scss';
 import {Text, TextAlign, TextSize} from '@/shared/ui/Text/Text';
 import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
 import {Avatar} from '@/shared/ui/Avatar/Avatar';

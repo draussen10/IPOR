@@ -1,7 +1,7 @@
 import {type FC, type HTMLAttributeAnchorTarget, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from './ArticleListItem.m.scss';
+import styles from './ArticleListItem.module.scss';
 import {Text} from '@/shared/ui/Text/Text';
 import {type Article, ArticleBlockType, type ArticleTextBlock, ArticleView} from '../../model/types/article';
 import {Icon} from '@/shared/ui/Icon/Icon';

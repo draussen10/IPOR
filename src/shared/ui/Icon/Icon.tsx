@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Icon.m.scss';
+import styles from './Icon.module.scss';
 
 interface IconProps {
     Svg: React.FunctionComponent<React.SVGAttributes<SVGElement>>

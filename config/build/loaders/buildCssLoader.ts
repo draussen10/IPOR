@@ -13,7 +13,7 @@ export const buildCssLoader = ({isDev}: BuildOptions): RuleSetRule => {
                 loader: 'css-loader',
                 options: {
                     modules: {
-                        auto: (resPath: string) => Boolean(resPath.includes('.m.')),
+                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
                         localIdentName: isDev ? '[local]_[contenthash:6]' : '[contenthash:8]'
                     }
 

@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {useTranslation} from 'react-i18next';
-import styles from './Sidebaritem.m.scss';
+import styles from './Sidebaritem.module.scss';
 import {AppLink, AppLinkTheme} from '@/shared/ui/AppLink/AppLink';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useSelector} from 'react-redux';

@@ -1,6 +1,6 @@
 import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './Code.m.scss';
+import styles from './Code.module.scss';
 import {Button, ButtonTheme} from '../Button/Button';
 import {Icon} from '../Icon/Icon';
 import CoryIcon from '@/shared/assets/icons/copy-20-20.svg';

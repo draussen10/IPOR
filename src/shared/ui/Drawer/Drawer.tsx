@@ -3,7 +3,7 @@ import React, {memo, type ReactNode, useCallback, useEffect} from 'react';
 import {useTheme} from '@/app/providers/ThemeProvider';
 import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 import {Overlay} from '../Overlay/Overlay';
-import styles from './Drawer.m.scss';
+import styles from './Drawer.module.scss';
 import {Portal} from '../Portal/Portal';
 
 interface DrawerProps {

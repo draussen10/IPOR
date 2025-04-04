@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './NotificationItem.m.scss';
+import styles from './NotificationItem.module.scss';
 import {type Notification} from '../../model/types/Notification';
 import {Card, CardTheme} from '@/shared/ui/Card/Card';
 import {Text} from '@/shared/ui/Text/Text';

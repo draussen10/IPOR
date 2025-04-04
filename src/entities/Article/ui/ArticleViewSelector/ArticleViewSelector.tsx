@@ -1,6 +1,6 @@
 import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import styles from './ArticleViewSelector.m.scss';
+import styles from './ArticleViewSelector.module.scss';
 import {ArticleView} from '../../model/types/article';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';

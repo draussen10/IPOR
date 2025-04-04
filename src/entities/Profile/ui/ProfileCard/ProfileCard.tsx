@@ -1,7 +1,7 @@
 import {type FC} from 'react';
 import {classNames, type Mods} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from './ProfileCard.m.scss';
+import styles from './ProfileCard.module.scss';
 import {Text, TextAlign, TextTheme} from '@/shared/ui/Text/Text';
 import {Input} from '@/shared/ui/Input/Input';
 import {type Profile} from '../../model/types/profile';
