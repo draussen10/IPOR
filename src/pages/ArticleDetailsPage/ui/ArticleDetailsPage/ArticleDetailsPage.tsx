@@ -10,6 +10,7 @@ import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetai
 import {ArticleRecommendationList} from '@/features/articleRecommendationList';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
 import {VStack} from '@/shared/ui/Stack';
+import {ArticleRating} from '@/features/articleRating';
 
 const reducers: ReducerList = {
     articleDetailsPage: articleDetailsPageReducer
@@ -25,13 +26,18 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     useReducerManager(reducers, true);
 
+    if (!id) {
+        return null;
+    }
+
     return (
         <Page className={classNames(styles.articleDetailsPage, {}, [className])}>
             <VStack gap="8" max>
                 <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
+                <ArticleDetails articleId={id} />
+                <ArticleRating articleId={id} />
                 <ArticleRecommendationList />
-                <ArticleDetailsComments id={id} />
+                <ArticleDetailsComments articleId={id} />
             </VStack>
         </Page>
     );

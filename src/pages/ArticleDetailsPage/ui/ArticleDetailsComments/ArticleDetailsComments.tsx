@@ -19,7 +19,7 @@ import {VStack} from '@/shared/ui/Stack';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsCommentsProps {
-    id?: string
+    articleId: string
     className?: string
 }
 
@@ -32,7 +32,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
 
     const {
         className,
-        id
+        articleId
     } = props;
 
     const onSendComment = useCallback((text: string) => {
@@ -40,7 +40,7 @@ export const ArticleDetailsComments: FC<ArticleDetailsCommentsProps> = memo((pro
     }, [dispatch]);
 
     useInitialEffect(() => {
-        dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchCommentsByArticleId(articleId));
     });
 
     return (
