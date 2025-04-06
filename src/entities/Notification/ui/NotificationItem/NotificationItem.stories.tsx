@@ -6,7 +6,14 @@ import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDeco
 
 const meta: Meta<typeof NotificationItem> = {
     component: NotificationItem,
-    title: '.../NotificationItem'
+    title: 'entities/Notification/NotificationItem',
+    args: {
+        item: {
+            id: '1',
+            title: 'Title',
+            description: 'description'
+        }
+    }
 };
 
 export default meta;

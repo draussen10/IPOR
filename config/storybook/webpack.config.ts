@@ -32,6 +32,7 @@ export default ({config}: { config: webpack.Configuration }) => {
     config.resolve!.extensions!.push('.tsx', '.ts', '.js');
 
     config.resolve!.alias = {
+        ...config.resolve!.alias,
         '@': paths.src
     }
 

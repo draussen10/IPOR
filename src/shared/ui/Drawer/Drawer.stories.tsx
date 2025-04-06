@@ -6,7 +6,10 @@ import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDeco
 
 const meta: Meta<typeof Drawer> = {
     component: Drawer,
-    title: '.../Drawer'
+    title: 'shared/Drawer',
+    args: {
+        isOpen: true
+    }
 };
 
 export default meta;

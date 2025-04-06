@@ -6,7 +6,7 @@ import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDeco
 
 const meta: Meta<typeof NotificationButton> = {
     component: NotificationButton,
-    title: '.../NotificationButton'
+    title: 'features/NotificationButton'
 };
 
 export default meta;
