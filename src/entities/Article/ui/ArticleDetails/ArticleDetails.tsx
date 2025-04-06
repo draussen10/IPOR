@@ -27,7 +27,7 @@ import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
 
 interface ArticleDetailsProps {
     className?: string
-    id?: string
+    articleId: string
 }
 
 const reducers: ReducerList = {
@@ -43,13 +43,13 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
     const {
         className,
-        id
+        articleId
     } = props;
 
     useReducerManager(reducers, true);
 
     useInitialEffect(() => {
-        dispatch(fetchArticleById(id));
+        dispatch(fetchArticleById(articleId));
     });
 
     const renderBlock = useCallback((block: ArticleBlock) => {
