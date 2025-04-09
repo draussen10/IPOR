@@ -1,8 +1,6 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {Currency} from '../model/types/currency';
-import styles from '@/entities/Profile/ui/ProfileCard/ProfileCard.module.scss';
 import {ListBox} from '@/shared/ui/Popups';
 
 const currencyList = (Object.keys(Currency) as Array<keyof typeof Currency>).map((key) => ({
@@ -31,21 +29,10 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
         onChange?.(value as Currency);
     }, [onChange]);
 
-    // return (
-    //     <Select
-    //         className={classNames(styles.currencySelect, {}, [className])}
-    //         value={value}
-    //         options={currencyList}
-    //         label={t('currency')}
-    //         readonly={readonly}
-    //         onChange={onChangeHandler}
-    //     />
-    // );
-
     return (
         <ListBox
             label={t('currency')}
-            className={classNames(styles.currencySelect, {}, [className])}
+            className={className}
             value={value}
             defaultValue={'Выберите валюту'}
             items={currencyList}

@@ -43,9 +43,8 @@ module.exports = {
         '@typescript-eslint/unbound-method': 'off',
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
-        'ipor/path-checker': ['error', {
-            alias: '@'
-        }]
+        'ipor/path-checker': ['error', {alias: '@'}],
+        'ipor/public-api-imports': ['error', {alias: '@'}]
     },
     globals: {
         __IS_DEV__: true,

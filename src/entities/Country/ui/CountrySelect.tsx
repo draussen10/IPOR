@@ -1,7 +1,5 @@
 import {type FC, memo, useCallback} from 'react';
-import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import styles from '@/entities/Profile/ui/ProfileCard/ProfileCard.module.scss';
 import {Select} from '@/shared/ui/Select/Select';
 import {Country} from '../model/types/country';
 
@@ -33,7 +31,7 @@ export const CountrySelect: FC<CurrencySelectProps> = memo((props) => {
 
     return (
         <Select
-            className={classNames(styles.currencySelect, {}, [className])}
+            className={className}
             value={value}
             options={countryList}
             label={t('country')}

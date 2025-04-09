@@ -4,7 +4,7 @@ import styles from './ArticlesPage.module.scss';
 import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {articlesPageReducer} from '../../model/slice/articlesPageSlice';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
-import {Page} from '@/widgets/Page/Page';
+import {Page} from '@/widgets/Page';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {ArticlePageFilters} from '../ArticlePageFilters/ArticlePageFilters';
