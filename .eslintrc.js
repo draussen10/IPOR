@@ -50,6 +50,13 @@ module.exports = {
                 alias: '@',
                 testFilePatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
             }
+        ],
+        'ipor/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+            }
         ]
     },
     globals: {

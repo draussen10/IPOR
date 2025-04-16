@@ -4,7 +4,7 @@ import React, {type ComponentProps, type FC, type ReactNode} from 'react';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';
 import {useModal} from '@/shared/lib/hooks/useModal';
-import {useTheme} from '@/app/providers/ThemeProvider';
+import {useTheme} from '@/shared/lib/hooks/useTheme';
 
 interface ModalProps extends ComponentProps<FC> {
     className?: string

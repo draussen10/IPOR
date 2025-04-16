@@ -1,4 +1,5 @@
 import {useTranslation} from 'react-i18next';
+// eslint-disable-next-line ipor/layer-imports
 import {BugButton} from '@/app/providers/ErrorBoundary';
 import {Page} from '@/widgets/Page';
 import {RatingCard} from '@/entities/Rating';

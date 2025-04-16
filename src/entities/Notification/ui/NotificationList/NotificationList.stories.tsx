@@ -1,7 +1,6 @@
 import {NotificationList} from './NotificationList';
 import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
 import {type Notification} from '../../model/types/Notification';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 

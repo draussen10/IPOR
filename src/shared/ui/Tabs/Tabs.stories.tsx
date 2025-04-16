@@ -1,7 +1,6 @@
 import {Tabs} from './Tabs';
 import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {fn} from '@storybook/test';
 

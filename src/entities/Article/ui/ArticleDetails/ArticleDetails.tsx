@@ -20,7 +20,7 @@ import {
 } from '../../model/selectrors/getArticleDetails';
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
-import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {type ReducerList, useReducerManager} from '@/shared/lib/hooks/useReducerManager';
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import {VStack} from '@/shared/ui/Stack';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';

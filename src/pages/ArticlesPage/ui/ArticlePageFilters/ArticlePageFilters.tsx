@@ -13,8 +13,7 @@ import {
 import {
     type ArticleView,
     ArticleViewSelector,
-    type ArticleSortField,
-    ArticleTypeTabs
+    type ArticleSortField
 } from '@/entities/Article';
 import {articlesPageActions} from '../../model/slice/articlesPageSlice';
 import {Card} from '@/shared/ui/Card/Card';
@@ -24,6 +23,7 @@ import {type SortOrder} from '@/shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from '@/shared/lib/hooks/useDebounce';
 import {VStack} from '@/shared/ui/Stack';
+import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';
 
 interface ArticlePageFiltersProps {
     className?: string

@@ -3,7 +3,7 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './ArticleDetailsPage.module.scss';
 import {ArticleDetails} from '@/entities/Article';
 import {useParams} from 'react-router-dom';
-import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {type ReducerList, useReducerManager} from '@/shared/lib/hooks/useReducerManager';
 import {Page} from '@/widgets/Page';
 import {articleDetailsPageReducer} from '../../model/slice';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

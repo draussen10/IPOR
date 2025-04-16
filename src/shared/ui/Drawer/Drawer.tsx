@@ -1,6 +1,6 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import React, {memo, type ReactNode, useCallback, useEffect} from 'react';
-import {useTheme} from '@/app/providers/ThemeProvider';
+import {useTheme} from '@/shared/lib/hooks/useTheme';
 import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 import {Overlay} from '../Overlay/Overlay';
 import styles from './Drawer.module.scss';

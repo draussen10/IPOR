@@ -1,7 +1,6 @@
 import ProfilePage from './ProfilePage';
 import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import {Theme} from '@/app/providers/ThemeProvider';
 import {Country} from '@/entities/Country';
 import {Currency} from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/test/storybook_profile.jpg';

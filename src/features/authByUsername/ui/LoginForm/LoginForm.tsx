@@ -12,7 +12,7 @@ import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginU
 import {getLoginError} from '../../model/selectors/getLoginError/getLoginError';
 import {getLoginIsLoading} from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword';
-import {useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {useReducerManager} from '@/shared/lib/hooks/useReducerManager';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 
 interface LoginFormProps {

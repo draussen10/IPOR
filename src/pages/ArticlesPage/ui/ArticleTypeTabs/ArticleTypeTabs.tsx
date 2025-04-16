@@ -3,9 +3,11 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
 import {type TabItem, Tabs} from '@/shared/ui/Tabs/Tabs';
-import {articlesPageActions, fetchArticlesList, getArticlesPageType} from '@/pages/ArticlesPage';
-import {ArticleType} from '../../model/types/article';
 import {useSelector} from 'react-redux';
+import { getArticlesPageType } from '../../model/selectors/articlesPageSelector';
+import {ArticleType} from '@/entities/Article';
+import { articlesPageActions } from '../../model/slice/articlesPageSlice';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 
 interface ArticleTypeTabsProps {
     className?: string

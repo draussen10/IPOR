@@ -14,7 +14,7 @@ import {getProfileValidateErrors} from '../../model/selectors/getProfileValidate
 import {ValidateProfileError} from '../../model/types/editableProfileCardSchema';
 import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData';
 import {profileActions, profileReducer} from '../../model/slice/profileSlice';
-import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
+import {type ReducerList, useReducerManager} from '@/shared/lib/hooks/useReducerManager';
 import {EditableProfileCardHeader} from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import {VStack} from '@/shared/ui/Stack';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';

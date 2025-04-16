@@ -10,8 +10,8 @@ import {
 } from '../../model/selectors/addCommentFormSelectors';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/addCommentFormSlice';
-import {type ReducerList, useReducerManager} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {HStack} from '@/shared/ui/Stack';
+import {type ReducerList, useReducerManager} from '@/shared/lib/hooks/useReducerManager';
 
 interface AddCommentFormProps {
     className?: string

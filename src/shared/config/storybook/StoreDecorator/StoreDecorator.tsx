@@ -1,11 +1,11 @@
 import {type StoryFn} from '@storybook/react';
 import {type StateSchema, StoreProvider} from '@/app/providers/StoreProvider';
-import {type ReducerList} from '@/app/providers/StoreProvider/lib/useReducerManager';
 import {loginReducer} from '@/features/AuthByUsername/testing';
 import {profileReducer} from '@/features/editableProfileCard/testing';
 import {articleDetailsReducer} from '@/entities/Article/testing';
 import {addCommentFormReducer} from '@/features/addCommentForm/testing';
 import {articleDetailsPageReducer} from '@/pages/ArticleDetailsPage/testing';
+import {type ReducerList} from '@/shared/lib/hooks/useReducerManager';
 
 const defaultAsyncReducers: ReducerList = {
     loginForm: loginReducer,
