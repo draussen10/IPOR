@@ -2,9 +2,9 @@ import {type FC, memo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './CommentCard.module.scss';
 import {type Comment} from '../../model/types/comment';
-import {Avatar} from '@/shared/ui/Avatar/Avatar';
-import {Text} from '@/shared/ui/Text/Text';
-import {AppLink} from '@/shared/ui/AppLink/AppLink';
+import {Avatar} from '@/shared/ui/Avatar';
+import {Text} from '@/shared/ui/Text';
+import {AppLink} from '@/shared/ui/AppLink';
 import {RoutePath} from '@/shared/const/router';
 
 interface CommentCardProps {

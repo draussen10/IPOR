@@ -1,4 +1,4 @@
-import {Modal} from '@/shared/ui/Modal/Modal';
+import {Modal} from '@/shared/ui/Modal';
 import {type FC, Suspense} from 'react';
 import {LoginFormAsync as LoginForm} from '../LoginForm/LoginFormAsync';
 

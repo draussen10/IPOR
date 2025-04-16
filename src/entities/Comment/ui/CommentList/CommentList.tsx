@@ -3,9 +3,9 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './CommentList.module.scss';
 import {type Comment} from '../../model/types/comment';
-import {Text, TextAlign} from '@/shared/ui/Text/Text';
+import {Text, TextAlign} from '@/shared/ui/Text';
 import {CommentCard} from '../CommentCard/CommentCard';
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {Skeleton} from '@/shared/ui/Skeleton';
 import {VStack} from '@/shared/ui/Stack';
 
 interface CommentListProps {

@@ -7,7 +7,7 @@ import {
     getArticlePageIsLoading,
     getArticlePageView
 } from '../../model/selectors/articlesPageSelector';
-import {Text, TextAlign} from '@/shared/ui/Text/Text';
+import {Text, TextAlign} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 
 interface ArticleInfiniteListProps {

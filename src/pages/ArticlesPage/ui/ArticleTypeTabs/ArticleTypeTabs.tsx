@@ -2,7 +2,7 @@ import {type FC, memo, useCallback, useMemo} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
 import {useTranslation} from 'react-i18next';
-import {type TabItem, Tabs} from '@/shared/ui/Tabs/Tabs';
+import {type TabItem, Tabs} from '@/shared/ui/Tabs';
 import {useSelector} from 'react-redux';
 import { getArticlesPageType } from '../../model/selectors/articlesPageSelector';
 import {ArticleType} from '@/entities/Article';
