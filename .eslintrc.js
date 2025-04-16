@@ -44,7 +44,13 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
         'ipor/path-checker': ['error', {alias: '@'}],
-        'ipor/public-api-imports': ['error', {alias: '@'}]
+        'ipor/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilePatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx']
+            }
+        ]
     },
     globals: {
         __IS_DEV__: true,

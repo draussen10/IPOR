@@ -1,5 +1,5 @@
 import {type FC, memo, useCallback, useState} from 'react';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import {RoutePath} from '@/shared/const/router';
 import {Avatar} from '@/shared/ui/Avatar/Avatar';
 import {Dropdown} from '@/shared/ui/Popups';
 import {useDispatch, useSelector} from 'react-redux';

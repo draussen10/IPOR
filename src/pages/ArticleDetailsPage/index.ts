@@ -8,4 +8,3 @@ export type {ArticleDetailsPageSchema} from './model/types/index';
 
 export {articleDetailsCommentsReducer} from './model/slice/articleDetailsCommentsSlice';
 export {articleDetailsPageRecommendationsReducer} from './model/slice/articleDetailsPageRecommendationsSlice';
-export {articleDetailsPageReducer} from './model/slice';

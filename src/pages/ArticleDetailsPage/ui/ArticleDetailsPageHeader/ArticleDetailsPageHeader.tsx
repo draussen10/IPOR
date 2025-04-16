@@ -2,7 +2,7 @@ import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetailsPageHeader.module.scss';
-import {RoutePath} from '@/shared/config/routeConfig/routeConfig';
+import {RoutePath} from '@/shared/const/router';
 import {Button} from '@/shared/ui/Button/Button';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
