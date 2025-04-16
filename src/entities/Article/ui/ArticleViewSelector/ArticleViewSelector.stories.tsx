@@ -4,6 +4,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDeco
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {ArticleView} from '../../model/types/article';
 import {fn} from '@storybook/test';
+import {Theme} from '@/shared/const/theme';
 
 const meta: Meta<typeof ArticleViewSelector> = {
     component: ArticleViewSelector,

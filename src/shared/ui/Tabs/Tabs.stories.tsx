@@ -3,6 +3,7 @@ import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {fn} from '@storybook/test';
+import {Theme} from '@/shared/const/theme';
 
 const meta: Meta<typeof Tabs> = {
     component: Tabs,

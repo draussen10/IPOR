@@ -4,6 +4,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDeco
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import {type Article, ArticleBlockType, ArticleType} from '@/entities/Article';
 import ProfileIcon from '@/shared/assets/test/storybook_profile.jpg';
+import {Theme} from '@/shared/const/theme';
 
 const article: Article = {
     id: '1',

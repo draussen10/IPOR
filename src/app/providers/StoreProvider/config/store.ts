@@ -4,7 +4,7 @@ import {counterReducer} from '@/entities/Counter';
 import {userReducer} from '@/entities/User';
 import {createReducerManager} from './reducerManager';
 import {$api} from '@/shared/api/api';
-import {UIReducer} from '@/features/UI';
+import {UIReducer} from '@/features/ui';
 import {rtkApi} from '@/shared/api/rtkApi';
 
 export function createReduxStore (

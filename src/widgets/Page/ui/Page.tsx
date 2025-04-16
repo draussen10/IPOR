@@ -3,7 +3,7 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import styles from './Page.module.scss';
 import {useInfiniteScroll} from '@/shared/lib/hooks/useInfiniteScroll';
 import {useAppDispatch} from '@/shared/lib/hooks/useAppDispatch';
-import {getUIScrollByPath, UIActions} from '@/features/UI';
+import {getUIScrollByPath, UIActions} from '@/features/ui';
 import {useLocation} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import {type StateSchema} from '@/app/providers/StoreProvider';

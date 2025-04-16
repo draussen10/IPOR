@@ -3,6 +3,7 @@ import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {type Notification} from '../../model/types/Notification';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import {Theme} from '@/shared/const/theme';
 
 const item: Notification = {
     title: 'title',

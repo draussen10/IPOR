@@ -5,6 +5,7 @@ import {Country} from '@/entities/Country';
 import {Currency} from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/test/storybook_profile.jpg';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import {Theme} from '@/shared/const/theme';
 
 const meta: Meta<typeof ProfilePage> = {
     component: ProfilePage,

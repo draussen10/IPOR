@@ -3,7 +3,7 @@ import styles from './Navbar.module.scss';
 import {useTranslation} from 'react-i18next';
 import {memo, useState} from 'react';
 import {Button, ButtonTheme} from '@/shared/ui/Button';
-import {LoginModal} from '@/features/AuthByUsername';
+import {LoginModal} from '@/features/authByUsername';
 import {useSelector} from 'react-redux';
 import {getUserAuthData} from '@/entities/User';
 import {AppLink} from '@/shared/ui/AppLink';
