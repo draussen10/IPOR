@@ -4,6 +4,7 @@ import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDeco
 import {RouterDecorator} from '@/shared/config/storybook/RouterDecorator/RouterDecorator';
 import {TranslateDecorator} from '@/shared/config/storybook/TranslateDecorator/TranslateDecorator';
 import {PaddingDecorator} from "@/shared/config/storybook/PaddingDecorator/PaddingDecorator";
+import { withThemeByClassName } from '@storybook/addon-themes';
 import {Theme} from "@/shared/const/theme";
 
 const preview: Preview = {
@@ -16,7 +17,20 @@ const preview: Preview = {
         },
         layout: 'fullscreen'
     },
-    decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT), RouterDecorator, TranslateDecorator, PaddingDecorator]
+    decorators: [
+        StyleDecorator,
+        // ThemeDecorator(Theme.LIGHT),
+        RouterDecorator,
+        TranslateDecorator,
+        PaddingDecorator,
+        withThemeByClassName({
+            themes: {
+                light: 'app ' + Theme.LIGHT,
+                dark: 'app ' + Theme.DARK
+            },
+            defaultTheme: 'light'
+        }),
+    ]
 };
 
 export default preview;
