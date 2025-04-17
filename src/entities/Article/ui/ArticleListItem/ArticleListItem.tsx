@@ -10,7 +10,7 @@ import {Card} from '@/shared/ui/Card';
 import {Avatar} from '@/shared/ui/Avatar';
 import {Button} from '@/shared/ui/Button';
 import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteArticleDetails} from '@/shared/const/router';
 import {AppLink} from '@/shared/ui/AppLink';
 
 interface ArticleListItemProps {
@@ -52,7 +52,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     <img src={article.img} className={styles.image} alt={article.title} />
                     {textBlock && <ArticleBlockTextComponent block={textBlock} className={styles.textBlock} />}
                     <div className={styles.footer}>
-                        <AppLink target={target} to={RoutePath.article_details + article.id}>
+                        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                             <Button>{t('readMore')}</Button>
                         </AppLink>
                         {views}
@@ -65,7 +65,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
     return (
         <AppLink
             target={target}
-            to={RoutePath.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
             className={classNames(styles.articleListItem, {}, [className, styles[view]])}
         >
             <Card>

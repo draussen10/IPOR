@@ -2,7 +2,7 @@ import {type FC, memo, useCallback} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetailsPageHeader.module.scss';
-import {RoutePath} from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles} from '@/shared/const/router';
 import {Button} from '@/shared/ui/Button';
 import {useNavigate} from 'react-router-dom';
 import {useSelector} from 'react-redux';
@@ -26,11 +26,11 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     } = props;
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(`${RoutePath.articles}/${article?.id}/edit`);
+        navigate(getRouteArticleEdit(article.id));
     }, [article?.id, navigate]);
 
     return (

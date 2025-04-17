@@ -1,5 +1,5 @@
 import {type FC, memo, useCallback, useState} from 'react';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteAdminPanel, getRouteProfiles} from '@/shared/const/router';
 import {Avatar} from '@/shared/ui/Avatar';
 import {Dropdown} from '@/shared/ui/Popups';
 import {useDispatch, useSelector} from 'react-redux';
@@ -34,13 +34,13 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
                     ? [
                         {
                             title: t('Админ панель'),
-                            href: RoutePath.admin_panel
+                            href: getRouteAdminPanel()
                         }
                     ]
                     : []),
                 {
                     title: t('Профиль пользователя'),
-                    href: RoutePath.profiles + authData.id
+                    href: getRouteProfiles(authData.id)
                 },
                 {
                     title: t('signOut'),

@@ -8,7 +8,7 @@ import {useSelector} from 'react-redux';
 import {getUserAuthData} from '@/entities/User';
 import {AppLink} from '@/shared/ui/AppLink';
 import {Text, TextTheme} from '@/shared/ui/Text';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteArticleCreate} from '@/shared/const/router';
 import {HStack} from '@/shared/ui/Stack';
 import {NotificationButton} from '@/features/notificationButton';
 import {AvatarDropdown} from '@/features/avatarDropdown';
@@ -28,7 +28,7 @@ export const Navbar = memo(({className}: NavbarProps) => {
         return (
             <header className={classNames(styles.navbar, {}, [className])}>
                 <Text className={styles.appName} title={t('IPOR')} theme={TextTheme.INVERTED}/>
-                <AppLink to={RoutePath.article_create} className={styles.createLink}>
+                <AppLink to={getRouteArticleCreate()} className={styles.createLink}>
                     {t('createArticle')}
                 </AppLink>
                 <HStack gap={'16'} className={styles.actions} >

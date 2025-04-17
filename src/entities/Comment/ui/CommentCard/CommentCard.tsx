@@ -5,7 +5,7 @@ import {type Comment} from '../../model/types/comment';
 import {Avatar} from '@/shared/ui/Avatar';
 import {Text} from '@/shared/ui/Text';
 import {AppLink} from '@/shared/ui/AppLink';
-import {RoutePath} from '@/shared/const/router';
+import {getRouteProfiles} from '@/shared/const/router';
 
 interface CommentCardProps {
     className?: string
@@ -20,7 +20,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
 
     return (
         <div className={classNames(styles.commentCard, {}, [className])}>
-            <AppLink to={RoutePath.profiles + comment.user.id} className={styles.header}>
+            <AppLink to={getRouteProfiles(comment.user.id)} className={styles.header}>
                 {comment.user.avatar && <Avatar src={comment.user.avatar} size={30} />}
                 <Text text={comment.user.username} className={styles.username} />
             </AppLink>
