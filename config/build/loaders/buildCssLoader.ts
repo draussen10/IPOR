@@ -5,6 +5,7 @@ import {type BuildOptions} from '../types/config';
 export const buildCssLoader = ({isDev}: BuildOptions): RuleSetRule => {
     return {
         test: /\.scss$/i,
+        exclude: /node_modules/,
         use: [
             // Creates `style` nodes from JS strings
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
