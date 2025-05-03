@@ -8,22 +8,24 @@ import {
     getArticlePageView,
     getArticlesPageOrder,
     getArticlesPageSearch,
-    getArticlesPageSort
+    getArticlesPageSort,
+    getArticlesPageType
 } from '../../model/selectors/articlesPageSelector';
 import {
     type ArticleView,
-    ArticleViewSelector,
-    type ArticleSortField
+    type ArticleSortField,
+    type ArticleType
 } from '@/entities/Article';
 import {articlesPageActions} from '../../model/slice/articlesPageSlice';
 import {Card} from '@/shared/ui/Card';
 import {Input} from '@/shared/ui/Input';
-import {ArticleSortSelect} from '@/entities/Article';
 import {type SortOrder} from '@/shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from '@/shared/lib/hooks/useDebounce';
 import {VStack} from '@/shared/ui/Stack';
-import { ArticleTypeTabs } from '../ArticleTypeTabs/ArticleTypeTabs';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import {ArticleSortSelect} from '@/features/ArticleSortSelect';
+import {ArticleViewSelector} from '@/features/ArticleViewSelector';
 
 interface ArticlePageFiltersProps {
     className?: string
@@ -39,6 +41,7 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props) => {
     const sort = useSelector(getArticlesPageSort);
     const order = useSelector(getArticlesPageOrder);
     const search = useSelector(getArticlesPageSearch);
+    const type = useSelector(getArticlesPageType);
 
     const onChangeView = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
@@ -64,6 +67,12 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props) => {
         debouncedFetchArticlesList();
     }, [debouncedFetchArticlesList, dispatch]);
 
+    const onChangeType = useCallback((value: ArticleType) => {
+        dispatch(articlesPageActions.setType(value));
+        dispatch(articlesPageActions.setPage(1));
+        dispatch(fetchArticlesList({replace: true}));
+    }, [dispatch]);
+
     return (
         <VStack gap="8" max className={classNames(styles.articlePageFilters, {}, [className])}>
             <div className={styles.sortWrapper}>
@@ -78,7 +87,7 @@ export const ArticlePageFilters: FC<ArticlePageFiltersProps> = memo((props) => {
             <Card className={styles.search}>
                 <Input placeholder={t('Search by...')} value={search} onChange={onChangeSearch} />
             </Card>
-            <ArticleTypeTabs className={styles.tabs} />
+            <ArticleTypeTabs value={type} onChangeType={onChangeType} className={styles.tabs} />
         </VStack>
     );
 });

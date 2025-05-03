@@ -2,9 +2,9 @@ import {ArticleViewSelector} from './ArticleViewSelector';
 import {type Meta, type StoryObj} from '@storybook/react';
 import {ThemeDecorator} from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import {ArticleView} from '../../model/types/article';
 import {fn} from '@storybook/test';
 import {Theme} from '@/shared/const/theme';
+import {ArticleView} from '@/entities/Article';
 
 const meta: Meta<typeof ArticleViewSelector> = {
     component: ArticleViewSelector,

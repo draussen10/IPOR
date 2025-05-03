@@ -30,7 +30,7 @@ export const ArticleDetailsPageHeader: FC<ArticleDetailsPageHeaderProps> = memo(
     }, [navigate]);
 
     const onEditArticle = useCallback(() => {
-        navigate(getRouteArticleEdit(article.id));
+        navigate(getRouteArticleEdit(article?.id || ''));
     }, [article?.id, navigate]);
 
     return (
