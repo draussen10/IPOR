@@ -4,7 +4,6 @@ import {useTranslation} from 'react-i18next';
 import styles from './ArticleDetails.module.scss';
 import {Text, TextAlign, TextSize} from '@/shared/ui/Text';
 import {Skeleton} from '@/shared/ui/Skeleton';
-import {Avatar} from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import {Icon} from '@/shared/ui/Icon';
@@ -24,6 +23,7 @@ import {type ReducerList, useReducerManager} from '@/shared/lib/hooks/useReducer
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import {VStack} from '@/shared/ui/Stack';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
+import {AppImage} from '@/shared/ui/AppImage';
 
 interface ArticleDetailsProps {
     className?: string
@@ -69,7 +69,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         <VStack gap="8" max className={classNames('', {}, [className])}>
             {isLoading && (
                 <>
-                    <Skeleton className={styles.avatar} width={200} height={200} borderRadius={'50%'} />
+                    <Skeleton className={styles.avatarContainer} width={200} height={200} borderRadius={'50%'} />
                     <Skeleton className={styles.title} width={300} height={24} />
                     <Skeleton className={styles.skeleton} width={600} height={24} />
                     <Skeleton className={styles.skeleton} width={'100%'} height={200} />
@@ -87,8 +87,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
             {data && (
                 <>
-                    <div className={styles.avatar} >
-                        <Avatar src={data.img} size={200} />
+                    <div className={styles.avatarContainer} >
+                        <AppImage src={data.img} height={200} width={200} className={styles.avatar} />
                     </div>
 
                     <Text

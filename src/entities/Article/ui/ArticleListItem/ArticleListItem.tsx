@@ -12,6 +12,8 @@ import {Button} from '@/shared/ui/Button';
 import {ArticleBlockTextComponent} from '../ArticleBlockTextComponent/ArticleBlockTextComponent';
 import {getRouteArticleDetails} from '@/shared/const/router';
 import {AppLink} from '@/shared/ui/AppLink';
+import {AppImage} from '@/shared/ui/AppImage';
+import {Skeleton} from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
     className?: string
@@ -49,7 +51,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
                     </div>
                     <Text title={article.title} className={styles.title} />
                     {types}
-                    <img src={article.img} className={styles.image} alt={article.title} />
+                    <AppImage
+                        src={article.img}
+                        className={styles.image}
+                        alt={article.title}
+                        fallback={<Skeleton width='100%' height={250} />}
+                    />
                     {textBlock && <ArticleBlockTextComponent block={textBlock} className={styles.textBlock} />}
                     <div className={styles.footer}>
                         <AppLink target={target} to={getRouteArticleDetails(article.id)}>
@@ -70,7 +77,12 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
         >
             <Card>
                 <div className={styles.imageWrapper}>
-                    <img src={article.img} alt={article.title} className={styles.img} />
+                    <AppImage
+                        fallback={<Skeleton width={200} height={200} />}
+                        src={article.img}
+                        alt={article.title}
+                        className={styles.img}
+                    />
                     <Text text={article.createdAt} className={styles.date} />
                 </div>
                 <div className={styles.infoWrapper}>
