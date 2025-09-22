@@ -10,7 +10,7 @@ const ForbiddenPage: FC<ForbiddenPageProps> = memo((props) => {
     const {t} = useTranslation();
 
     return (
-        <Page>
+        <Page data-testid={'ForbiddenPage'}>
             {t('No rights to selected page')}
         </Page>
     );

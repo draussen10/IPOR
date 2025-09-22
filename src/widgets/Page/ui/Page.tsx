@@ -9,8 +9,9 @@ import {useSelector} from 'react-redux';
 import {type StateSchema} from '@/app/providers/StoreProvider';
 import {useThrottle} from '@/shared/lib/hooks/useThrottle';
 import {useInitialEffect} from '@/shared/lib/hooks/useInitialEffect';
+import {type TestProps} from '@/shared/types/test';
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string
     onScrollEnd?: () => void
     children: ReactNode
@@ -48,13 +49,14 @@ export const Page: FC<PageProps> = (props) => {
     }, 500);
 
     return (
-        <section
+        <main
             ref={wrapperRef}
             className={classNames(styles.page, {}, [className])}
             onScroll={onScroll}
+            data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
             {onScrollEnd && <div className={styles.trigger} ref={triggerRef} />}
-        </section>
+        </main>
     );
 };

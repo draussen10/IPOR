@@ -19,7 +19,7 @@ import {
 import {articlesPageActions} from '../../model/slice/articlesPageSlice';
 import {Card} from '@/shared/ui/Card';
 import {Input} from '@/shared/ui/Input';
-import {type SortOrder} from '@/shared/types';
+import {type SortOrder} from '@/shared/types/sort';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from '@/shared/lib/hooks/useDebounce';
 import {VStack} from '@/shared/ui/Stack';

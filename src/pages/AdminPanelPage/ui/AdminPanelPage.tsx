@@ -8,7 +8,7 @@ interface AdminPanelPageProps {
 const AdminPanelPage: FC<AdminPanelPageProps> = memo((props) => {
     return (
         // eslint-disable-next-line i18next/no-literal-string
-        <Page>
+        <Page data-testid={'AdminPanelPage'}>
             Admin
         </Page>
     );

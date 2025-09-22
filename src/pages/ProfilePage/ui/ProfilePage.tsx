@@ -14,7 +14,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     const {className} = props;
 
     return (
-        <Page className={classNames(styles.profile, {}, [className])}>
+        <Page data-testid={'ProfilePage'} className={classNames(styles.profile, {}, [className])}>
             <EditableProfileCard id={id} />
         </Page>
     );
